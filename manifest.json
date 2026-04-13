@@ -1,0 +1,29 @@
+{
+  "name": "Well Spoken",
+  "short_name": "Well Spoken",
+  "description": "Parent-friendly speech and language guidance from licensed SLPs",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#faf6ed",
+  "theme_color": "#3a6b4c",
+  "orientation": "portrait-primary",
+  "categories": ["health", "education"],
+  "icons": [
+    {
+      "src": "/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}

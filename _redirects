@@ -1,0 +1,4 @@
+# All paths serve index.html (SPA with hash routing)
+# Not strictly necessary since hash routing doesn't change the path,
+# but good insurance if you ever switch to path-based routing.
+/*  /index.html  200
