@@ -2,7 +2,7 @@
 // Provides offline caching so the app works without a connection.
 // Strategy: cache-first for static assets, network-first for navigation.
 
-const CACHE_NAME = "wellspoken-v1";
+const CACHE_NAME = "wellspoken-v2";
 const PRECACHE = [
   "/",
   "/index.html",
@@ -29,7 +29,8 @@ self.addEventListener("activate", event => {
   self.clients.claim();
 });
 
-// Fetch: serve from cache, fall back to network, cache successful responses
+// Fetch: network-first for HTML (so deploys show immediately),
+// stale-while-revalidate for everything else (icons, manifest, etc.)
 self.addEventListener("fetch", event => {
   const { request } = event;
 
@@ -38,18 +39,36 @@ self.addEventListener("fetch", event => {
     return;
   }
 
-  event.respondWith(
-    caches.match(request).then(cached => {
-      // Return cached version, but also update cache in background
-      const fetchPromise = fetch(request).then(response => {
+  const isNavigation = request.mode === "navigate"
+    || request.destination === "document"
+    || request.url.endsWith("/")
+    || request.url.endsWith("/index.html");
+
+  if (isNavigation) {
+    // Network-first for the HTML — always get the latest deploy
+    event.respondWith(
+      fetch(request).then(response => {
         if (response && response.status === 200) {
           const clone = response.clone();
           caches.open(CACHE_NAME).then(cache => cache.put(request, clone));
         }
         return response;
-      }).catch(() => cached);
+      }).catch(() => caches.match(request))
+    );
+  } else {
+    // Stale-while-revalidate for static assets
+    event.respondWith(
+      caches.match(request).then(cached => {
+        const fetchPromise = fetch(request).then(response => {
+          if (response && response.status === 200) {
+            const clone = response.clone();
+            caches.open(CACHE_NAME).then(cache => cache.put(request, clone));
+          }
+          return response;
+        }).catch(() => cached);
 
-      return cached || fetchPromise;
-    })
-  );
+        return cached || fetchPromise;
+      })
+    );
+  }
 });
