@@ -2574,8 +2574,8 @@ function viewHome(){
 <section class="hero">
   <div class="hero-copy">
     <span class="hero-eyebrow">For parents, from a licensed SLP</span>
-    <h1>Is what you are seeing <em>normal?</em></h1>
-    <p class="hero-lede">If something about your child's speech or language development feels off, you are not imagining it and you are not overreacting. Well Spoken helps you understand what you are noticing, figure out if it is worth a conversation with a professional, and find the right speech-language pathologist when you are ready.</p>
+    <h1>From worry to answers to an SLP who can help.</h1>
+    <p class="hero-lede">Well Spoken is a parent-first resource for childhood speech and language development. Learn what you are seeing, organize your concerns, and find the right speech-language pathologist when you are ready.</p>
     <div class="hero-actions">
       <a href="#/check-in" class="btn btn-primary btn-lg">Is this normal? Take a quick check</a>
       <a href="#/learn" class="btn btn-secondary btn-lg">I know what I am looking for</a>
@@ -2585,61 +2585,6 @@ function viewHome(){
     <img src="https://images.pexels.com/photos/7979782/pexels-photo-7979782.jpeg?auto=compress&cs=tinysrgb&w=1260&h=1575" alt="A woman and a young girl reading a picture book together" loading="eager">
   </div>
 </section>
-
-<section class="home-section fade-up">
-  <h2>How this works</h2>
-  <p class="lede">Most parents show up at an SLP's office already worried. Most leave still confused, with a stack of handouts. Well Spoken is the part in the middle that most resources miss.</p>
-  <div class="journey-grid">
-    <a href="#/learn" class="journey-card">
-      <div class="journey-num">01</div>
-      <h3>Read about what you are seeing</h3>
-      <p>Parent-friendly explanations of the nine main areas of childhood communication, with red flags and at-home ideas.</p>
-    </a>
-    <div class="journey-arrow" aria-hidden="true">→</div>
-    <a href="#/check-in" class="journey-card">
-      <div class="journey-num">02</div>
-      <h3>Organize your concerns</h3>
-      <p>Our Parent Concern Check is eight questions by age. Not a clinical screening. A structured way to put your observations into words.</p>
-    </a>
-    <div class="journey-arrow" aria-hidden="true">→</div>
-    <a href="#/at-home" class="journey-card">
-      <div class="journey-num">03</div>
-      <h3>Try at-home ideas</h3>
-      <p>Twelve low-pressure activities SLPs recommend for daily life. None are a substitute for professional care.</p>
-    </a>
-    <div class="journey-arrow" aria-hidden="true">→</div>
-    <a href="#/directory" class="journey-card">
-      <div class="journey-num">04</div>
-      <h3>Talk to an SLP</h3>
-      <p>Our directory connects you with independent speech-language pathologists in your state. Virtual or in person.</p>
-    </a>
-  </div>
-</section>
-
-<div class="trust fade-up">
-  Every piece of content here is reviewed by a licensed speech-language pathologist. We do not provide diagnoses. We do not replace a clinical treatment plan. We help you <strong>get to the people who can</strong>.
-</div>
-
-<div class="parent-voices fade-up">
-  <div class="parent-voices-inner">
-    <h2>Parents who started here</h2>
-    <p class="pv-sub">Real stories from families who used Well Spoken to take their next step.</p>
-    <div class="pv-grid">
-      <div class="pv-card">
-        <p class="pv-quote">I spent two months googling "is my toddler a late talker" before I found this site. The concern check gave me the words to explain what I was seeing to our pediatrician. We had a referral to an SLP within the week.</p>
-        <div class="pv-attr">Mother of a 22-month-old, Bergen County NJ</div>
-      </div>
-      <div class="pv-card">
-        <p class="pv-quote">My son's preschool teacher kept saying he was fine. I knew something was off but I could not explain it. Reading the expressive language page here was the first time I felt like someone understood exactly what I was seeing.</p>
-        <div class="pv-attr">Father of a 3-year-old, Ridgewood NJ</div>
-      </div>
-      <div class="pv-card">
-        <p class="pv-quote">We were terrified it was autism. It was not. But the fact that this site addressed that question directly instead of dodging it made me trust everything else on here. We found our SLP through the directory.</p>
-        <div class="pv-attr">Mother of a 2-year-old, Paramus NJ</div>
-      </div>
-    </div>
-  </div>
-</div>
 
 <section class="home-section fade-up">
   <h2>What are you noticing?</h2>
@@ -2658,66 +2603,38 @@ function viewHome(){
 </section>
 
 <section class="home-section fade-up">
-  <h2>Explore the condition library</h2>
-  <p class="lede">Nine areas of childhood communication, written for parents. Start with whatever sounds like what you are seeing.</p>
-  <div class="card-grid">
-    ${CONDITIONS.map(c => `
-      <a href="#/learn/${c.slug}" class="condition-card fade-up">
-        <div class="cond-card-img">
-          <img src="${c.coverImage}" alt="" loading="lazy">
-        </div>
-        <div class="cond-card-body">
-          <span class="num">${c.num}</span>
-          <h3>${c.name}</h3>
-          <div class="clinical-name">${c.clinical}</div>
-          <p class="summary">${c.summary}</p>
-          <span class="arrow">Read more →</span>
-        </div>
-      </a>
-    `).join("")}
+  <h2>How this works</h2>
+  <p class="lede">Most parents show up at an SLP's office already worried. Most leave still confused. Well Spoken is the part in the middle that most resources skip.</p>
+  <div class="journey-grid">
+    <a href="#/learn" class="journey-card">
+      <div class="journey-num">01</div>
+      <h3>Read about what you are seeing</h3>
+      <p>Parent-friendly explanations of the nine main areas of childhood communication, with red flags and at-home ideas.</p>
+    </a>
+    <div class="journey-arrow" aria-hidden="true">→</div>
+    <a href="#/check-in" class="journey-card">
+      <div class="journey-num">02</div>
+      <h3>Organize your concerns</h3>
+      <p>Our Parent Concern Check is eight questions by age. A structured way to put your observations into words.</p>
+    </a>
+    <div class="journey-arrow" aria-hidden="true">→</div>
+    <a href="#/at-home" class="journey-card">
+      <div class="journey-num">03</div>
+      <h3>Try at-home ideas</h3>
+      <p>Low-pressure activities SLPs recommend for daily life. Not a substitute for professional care.</p>
+    </a>
+    <div class="journey-arrow" aria-hidden="true">→</div>
+    <a href="#/directory" class="journey-card">
+      <div class="journey-num">04</div>
+      <h3>Talk to an SLP</h3>
+      <p>Our directory connects you with independent speech-language pathologists. Virtual or in person.</p>
+    </a>
   </div>
 </section>
 
-<div class="feature-strip podcast-strip fade-up">
-  <div class="feature-strip-inner">
-    <div class="podcast-logo" aria-hidden="true">
-      <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-        <rect x="22" y="8" width="20" height="32" rx="10"/>
-        <path d="M14 30 a18 18 0 0 0 36 0"/>
-        <line x1="32" y1="48" x2="32" y2="58"/>
-        <line x1="22" y1="58" x2="42" y2="58"/>
-      </svg>
-    </div>
-    <div class="feature-body">
-      <span class="feature-eyebrow">Coming soon · Podcast</span>
-      <h3>The Speak Easy <em>with Patti and Jill</em></h3>
-      <p>Two speech-language pathologists. A new topic every week. No jargon, no pressure, just real talk for parents who want to understand what is going on.</p>
-    </div>
-    <a href="#/about" class="feature-cta"><span class="play-dot"></span> Get notified when we launch</a>
-  </div>
+<div class="trust fade-up">
+  Every piece of content here is reviewed by a licensed speech-language pathologist. We do not provide diagnoses. We do not replace a clinical treatment plan. We help you <strong>get to the people who can</strong>.
 </div>
-
-<section class="home-section fade-up" style="margin-top:0;border-top:none;padding-top:56px">
-  <h2>Start where you are</h2>
-  <p class="lede">You do not need to know what your child's issue is called to use this. Start with what you are noticing.</p>
-  <div class="path-grid">
-    <a href="#/check-in" class="path-card">
-      <div class="path-icon">💬</div>
-      <h3>Not sure where to start</h3>
-      <p>The Parent Concern Check walks you through 8 questions based on your child's age.</p>
-    </a>
-    <a href="#/learn" class="path-card">
-      <div class="path-icon">📖</div>
-      <h3>I know what to look up</h3>
-      <p>Jump straight into the condition library. Stuttering, late talker, hard to understand, and more.</p>
-    </a>
-    <a href="#/directory" class="path-card">
-      <div class="path-icon">👋</div>
-      <h3>Ready to talk to someone</h3>
-      <p>Browse SLPs now. Filter by state, specialty, and in-person or virtual.</p>
-    </a>
-  </div>
-</section>
 
 <div class="email-strip fade-up">
   <div class="email-strip-inner">
@@ -2727,19 +2644,6 @@ function viewHome(){
       <input type="email" placeholder="Your email" required aria-label="Email address">
       <button type="submit">Send it to me</button>
     </form>
-  </div>
-</div>
-
-<div class="feature-strip fade-up">
-  <div class="feature-strip-inner">
-    <img class="slp-headshot" src="https://images.pexels.com/photos/5212345/pexels-photo-5212345.jpeg?auto=compress&cs=tinysrgb&w=400&h=400" alt="Featured speech-language pathologist">
-    <div class="feature-body">
-      <span class="feature-eyebrow">Featured SLP</span>
-      <h3>Jill Benyamine, MS, CCC-SLP</h3>
-      <div class="slp-meta">Oradell, NJ · Virtual and in-person · Pediatric speech and language</div>
-      <p>"Every family walks in worried about the same thing, but the path forward is different for every kid. My job is to listen first, explain clearly, and then build a plan you can actually run at home."</p>
-    </div>
-    <a href="#/directory" class="feature-cta">See Jill's profile →</a>
   </div>
 </div>
 `;
