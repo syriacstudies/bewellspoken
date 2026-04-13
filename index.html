@@ -2542,6 +2542,7 @@ function render(){
     case "directory": arg ? (root.innerHTML = viewSlp(arg)) : (root.innerHTML = viewDirectory()); break;
     case "log": root.innerHTML = viewLog(); break;
     case "about": root.innerHTML = viewAbout(); break;
+    case "autism": root.innerHTML = viewAutism(); break;
     case "review": root.innerHTML = viewReview(); break;
     default: root.innerHTML = viewHome(); bindHome();
   }
@@ -2652,6 +2653,7 @@ function viewHome(){
     <a href="#/learn/social-pragmatic" class="symptom-chip"><span class="sc-icon">👫</span>Trouble with friends or social cues<span class="sc-arrow">→</span></a>
     <a href="#/learn/feeding-swallowing" class="symptom-chip"><span class="sc-icon">🍽️</span>Picky eating or trouble swallowing<span class="sc-arrow">→</span></a>
     <a href="#/learn/childhood-apraxia" class="symptom-chip"><span class="sc-icon">🧩</span>Knows the word but can not get it out<span class="sc-arrow">→</span></a>
+    <a href="#/autism" class="symptom-chip" style="border-color:var(--accent);background:var(--accent-light)"><span class="sc-icon">💛</span>Worried it might be autism<span class="sc-arrow">→</span></a>
   </div>
 </section>
 
@@ -3481,6 +3483,49 @@ function confirmBooking(id){
 }
 function closeBookingModal(){
   document.getElementById("booking-modal").classList.remove("open");
+}
+
+function viewAutism(){
+  return `
+<div class="page-header">
+  <span class="eyebrow">The question on your mind</span>
+  <h1>Worried it might be autism?</h1>
+  <p class="lede">If you are reading about speech delays and the word autism keeps coming up, you are not alone. This is the most common fear parents carry into their first conversation with a professional. Here is what we can tell you.</p>
+</div>
+
+<div class="content-body">
+  <h3>Speech delay and autism are not the same thing</h3>
+  <p>A speech or language delay on its own does not mean your child is on the autism spectrum. Many children who talk late are late talkers and nothing more. Their language catches up, sometimes on its own, sometimes with a little help from an SLP, and they move on.</p>
+  <p>Autism spectrum disorder involves a broader pattern that goes beyond speech. It typically includes differences in social communication (not just language, but eye contact, shared attention, back-and-forth interaction) alongside restricted or repetitive behaviors or interests. A child who is a late talker but makes eye contact, points to show you things, plays imaginatively, and is socially engaged is showing a very different profile than a child who has those same language delays alongside social differences.</p>
+
+  <h3>What an SLP can and cannot tell you</h3>
+  <p>A speech-language pathologist can evaluate your child's communication skills in detail. They can tell you whether your child's speech and language are developing typically, whether there are delays, and what kind of support might help. Many SLPs are also trained to recognize the communication patterns associated with autism and can tell you whether a further evaluation is worth pursuing.</p>
+  <p>What an SLP cannot do is diagnose autism. That diagnosis comes from a developmental pediatrician, a child psychologist, or a neuropsychologist, usually through a comprehensive evaluation. But an SLP is often the first professional to notice the signs, and a good one will tell you directly if they think a broader evaluation is warranted.</p>
+
+  <h3>Getting an evaluation is not a sentence</h3>
+  <p>Many parents avoid seeking help because they are afraid of what the answer might be. But an evaluation is not a label dropped on your child. It is information. It tells you what is going on, what your child needs, and what the best path forward looks like. If the answer is autism, early intervention makes a measurable difference. If the answer is not autism, you now know that and can focus your energy on the actual issue. Either way, you are better off knowing.</p>
+
+  <h3>What you can do right now</h3>
+  <p>If your child has a speech or language delay and you are also noticing social differences, the most useful first step is a conversation with your pediatrician. Tell them specifically what you are seeing. You can also request a developmental screening (the ASQ and M-CHAT are common ones for young children). If your pediatrician is not concerned but your gut says otherwise, you are allowed to push for a referral or seek one on your own. Parents are usually right when they feel something is off, even when they cannot name it yet.</p>
+
+  <div class="callout">
+    <h4>Want to organize what you are noticing?</h4>
+    <p>Our <a href="#/check-in">Parent Concern Check</a> helps you put your observations into words. It is not a clinical screening and it does not diagnose anything. But it can help you walk into a pediatrician or SLP appointment with a clear picture of what you have been seeing.</p>
+  </div>
+
+  <h3>Resources we trust</h3>
+  <p>These are established, evidence-based organizations. We are not affiliated with any of them.</p>
+  <div class="content-body">
+    <p><strong>CDC "Learn the Signs. Act Early."</strong> Free milestone checklists and a developmental monitoring app. The most widely recommended starting point for parents with questions about any area of development. <a href="https://www.cdc.gov/actearly" target="_blank" rel="noopener">cdc.gov/actearly</a></p>
+    <p><strong>ASHA (American Speech-Language-Hearing Association)</strong> The national professional organization for SLPs. Their public-facing pages on speech and language development are reliable and parent-accessible. <a href="https://www.asha.org" target="_blank" rel="noopener">asha.org</a></p>
+    <p><strong>Autism Science Foundation</strong> Evidence-based information for families navigating autism questions. No pseudoscience, no fear-based messaging. <a href="https://autismsciencefoundation.org" target="_blank" rel="noopener">autismsciencefoundation.org</a></p>
+  </div>
+
+  <div class="disclaimer-ribbon" style="margin-top:40px">
+    <strong>Clinical review pending.</strong> This content is in draft for a licensed SLP to review before public launch. The relationship between speech delay and autism is sensitive and nuanced. Jill will review for accuracy, tone, and completeness before this page goes live.
+  </div>
+</div>
+`;
 }
 
 function viewAbout(){
