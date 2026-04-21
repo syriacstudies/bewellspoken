@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="googlebot" content="noindex, nofollow">
+<script>(function(){try{if(sessionStorage.getItem("ws_gate_v1")!=="1"){window.location.replace("./");return;}}catch(e){window.location.replace("./");}})();</script>
+
+<title>Well Spoken — Four directions</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..600;1,9..144,400..500&family=Inter:wght@400;500;600&family=Caveat:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0f1412;
+    --panel:#17201c;
+    --panel-2:#1d2824;
+    --ink:#eef0ec;
+    --ink-soft:#b8c1ba;
+    --muted:#8c938d;
+    --rule:rgba(238,240,236,.1);
+    --accent:#c4d0c6;
+  }
+  *,*::before,*::after{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{
+    background:var(--bg);color:var(--ink);
+    font-family:"Inter",system-ui,sans-serif;font-size:15px;line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1440px;margin:0 auto;padding:0 40px}
+
+  header{padding:56px 0 32px}
+  header .inner{display:flex;align-items:flex-start;justify-content:space-between;gap:40px;flex-wrap:wrap}
+  .title-block{max-width:720px}
+  .eyebrow{
+    font-family:"Caveat",cursive;font-size:26px;color:var(--accent);margin-bottom:8px;line-height:1;
+  }
+  h1{
+    font-family:"Fraunces",serif;font-weight:400;
+    font-size:clamp(2rem,3.4vw,3rem);line-height:1.1;letter-spacing:-.015em;
+    margin:0 0 18px;color:var(--ink);
+  }
+  h1 em{font-style:italic}
+  .lede{
+    font-size:17px;line-height:1.6;color:var(--ink-soft);max-width:62ch;margin:0;
+  }
+  .lede strong{color:var(--ink);font-weight:500}
+  .right-meta{
+    font-family:"Fraunces",serif;font-style:italic;font-size:13px;color:var(--muted);
+    max-width:260px;text-align:right;
+  }
+
+  /* Grid */
+  .options{
+    display:grid;grid-template-columns:1fr 1fr;gap:32px;padding:20px 0 80px;
+  }
+  .option{
+    background:var(--panel);border-radius:20px;overflow:hidden;
+    display:flex;flex-direction:column;transition:transform .2s ease, box-shadow .2s ease;
+    border:1px solid var(--rule);
+  }
+  .option:hover{transform:translateY(-3px);box-shadow:0 30px 60px rgba(0,0,0,.35)}
+
+  .option .preview{
+    position:relative;width:100%;aspect-ratio:16/10;overflow:hidden;
+    background:var(--panel-2);border-bottom:1px solid var(--rule);
+  }
+  .option .preview iframe{
+    position:absolute;top:0;left:0;
+    width:1600px;height:1000px;
+    transform:scale(.36);transform-origin:top left;
+    border:0;pointer-events:none;
+  }
+  .option .preview .shield{
+    position:absolute;inset:0;
+  }
+  .option .preview .corner{
+    position:absolute;top:14px;left:14px;z-index:2;
+    font-family:"Inter",sans-serif;font-size:11px;letter-spacing:.14em;text-transform:uppercase;
+    padding:7px 12px;border-radius:999px;
+    backdrop-filter:blur(10px);
+  }
+
+  .option .body{padding:28px 28px 30px}
+  .option .row1{display:flex;justify-content:space-between;align-items:baseline;gap:16px;margin-bottom:14px}
+  .option .name{
+    font-family:"Fraunces",serif;font-weight:500;font-size:26px;color:var(--ink);letter-spacing:-.01em;line-height:1;
+  }
+  .option .num{
+    font-family:"Caveat",cursive;font-size:26px;color:var(--accent);line-height:1;
+  }
+  .option .mood{font-size:13px;color:var(--muted);margin-bottom:16px;font-style:italic}
+  .option .desc{font-size:14.5px;line-height:1.6;color:var(--ink-soft);margin:0 0 22px}
+  .option .desc strong{color:var(--ink);font-weight:500}
+
+  .swatches{display:flex;gap:6px;margin-bottom:22px}
+  .swatch{width:24px;height:24px;border-radius:6px;border:1px solid rgba(255,255,255,.08)}
+
+  .option .cta-row{display:flex;justify-content:space-between;align-items:center;gap:14px}
+  .option .open{
+    background:var(--ink);color:var(--bg);
+    font-family:"Inter",sans-serif;font-weight:500;font-size:13px;letter-spacing:.02em;
+    padding:12px 22px;border-radius:999px;
+  }
+  .option .meta{font-size:12px;color:var(--muted);letter-spacing:.04em}
+
+  /* Option-specific preview tints */
+  .opt-editorial .corner{background:rgba(30,51,40,.75);color:#f4ede0}
+  .opt-boutique .corner{background:rgba(26,35,32,.75);color:#efe7d6}
+  .opt-practice .corner{background:rgba(31,58,95,.85);color:white}
+  .opt-concierge .corner{background:rgba(74,108,138,.85);color:#f5ede0}
+
+  footer{padding:36px 0 60px;border-top:1px solid var(--rule);color:var(--muted)}
+  footer .inner{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;font-size:13px}
+
+  @media (max-width:900px){
+    .options{grid-template-columns:1fr;gap:24px;padding-bottom:60px}
+    .wrap{padding:0 22px}
+    header{padding:36px 0 20px}
+    .option .preview iframe{transform:scale(.28)}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap inner">
+    <div class="title-block">
+      <div class="eyebrow">Good morning, John.</div>
+      <h1>Four distinct directions, each committing hard to a <em>different reading</em> of what you asked for.</h1>
+      <p class="lede">Each one leads with photography and color, none of them are a reformat of last night. Open each, scroll, and tell me which one is closest to what you are seeing in your head. If the answer is a hybrid of two, say that. If the answer is "none of these," that is useful too. <strong>You pick, I build out the full site from that.</strong></p>
+    </div>
+    <div class="right-meta">
+      Built overnight, photo forward, in color. North star: your wife, her profession, and the families she wants to reach in Bergen County.
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <div class="options">
+
+      <a href="editorial.html" class="option opt-editorial">
+        <div class="preview">
+          <div class="corner">01 · The Editorial</div>
+          <iframe src="editorial.html" scrolling="no" tabindex="-1" aria-hidden="true"></iframe>
+          <div class="shield"></div>
+        </div>
+        <div class="body">
+          <div class="row1">
+            <div class="name">The Editorial</div>
+            <div class="num">No. 01</div>
+          </div>
+          <div class="mood">The Cup of Jo / Domino / New Yorker Sunday supplement feel.</div>
+          <p class="desc">Masthead at the top. A <strong>feature story</strong> format with byline and drop cap. The noticing moments are small photo cards. The resources read as a <strong>directory on a deep forest green band</strong>. Jill is "The Column." Warm cream paper, forest green ink, generous photography throughout.</p>
+          <div class="swatches">
+            <span class="swatch" style="background:#f4ede0"></span>
+            <span class="swatch" style="background:#ebe0c8"></span>
+            <span class="swatch" style="background:#1e3328"></span>
+            <span class="swatch" style="background:#4b6a52"></span>
+            <span class="swatch" style="background:#e4d6b6"></span>
+          </div>
+          <div class="cta-row">
+            <span class="open">Open option 01</span>
+            <span class="meta">For: readers. Families who already subscribe to newsletters.</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="boutique.html" class="option opt-boutique">
+        <div class="preview">
+          <div class="corner">02 · The Boutique</div>
+          <iframe src="boutique.html" scrolling="no" tabindex="-1" aria-hidden="true"></iframe>
+          <div class="shield"></div>
+        </div>
+        <div class="body">
+          <div class="row1">
+            <div class="name">The Boutique</div>
+            <div class="num">No. 02</div>
+          </div>
+          <div class="mood">Aesop / 1 Hotels / Maude / Goop at its most restrained.</div>
+          <p class="desc">A <strong>full-bleed photographic hero</strong> that fills the whole first screen. Poetic restraint. Image and text alternate in big cinematic pillars. A staggered triptych showing "inside our practice." A huge italic pull quote. Jill as a centered portrait in sage. Felt more than read.</p>
+          <div class="swatches">
+            <span class="swatch" style="background:#efe7d6"></span>
+            <span class="swatch" style="background:#dfe8df"></span>
+            <span class="swatch" style="background:#3f4e45"></span>
+            <span class="swatch" style="background:#d9e3ec"></span>
+            <span class="swatch" style="background:#e8ddc4"></span>
+          </div>
+          <div class="cta-row">
+            <span class="open">Open option 02</span>
+            <span class="meta">For: the affluent mom who books a facial on her lunch break.</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="practice.html" class="option opt-practice">
+        <div class="preview">
+          <div class="corner">03 · The Practice</div>
+          <iframe src="practice.html" scrolling="no" tabindex="-1" aria-hidden="true"></iframe>
+          <div class="shield"></div>
+        </div>
+        <div class="body">
+          <div class="row1">
+            <div class="name">The Practice</div>
+            <div class="num">No. 03</div>
+          </div>
+          <div class="mood">Parsley Health / Tia / Galileo. Confident. Professional. Trustworthy.</div>
+          <p class="desc">Two-column hero with a <strong>Jill-reads-your-note chat card</strong> floating over the photograph. A <strong>trust bar</strong>, a numbered process, a 3x2 photo grid of noticing moments, and a deep blue close CTA. This is the version a Bergen County dad sends his skeptical in-laws.</p>
+          <div class="swatches">
+            <span class="swatch" style="background:#ffffff"></span>
+            <span class="swatch" style="background:#1f3a5f"></span>
+            <span class="swatch" style="background:#5a83ad"></span>
+            <span class="swatch" style="background:#d9e6f2"></span>
+            <span class="swatch" style="background:#dfe8df"></span>
+          </div>
+          <div class="cta-row">
+            <span class="open">Open option 03</span>
+            <span class="meta">For: shoppers comparing to a doctor or a clinic.</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="concierge.html" class="option opt-concierge">
+        <div class="preview">
+          <div class="corner">04 · The Concierge</div>
+          <iframe src="concierge.html" scrolling="no" tabindex="-1" aria-hidden="true"></iframe>
+          <div class="shield"></div>
+        </div>
+        <div class="body">
+          <div class="row1">
+            <div class="name">The Concierge</div>
+            <div class="num">No. 04</div>
+          </div>
+          <div class="mood">A warm letter from your SLP friend. Intimate, local, Bergen County.</div>
+          <p class="desc">Hero is a <strong>framed portrait of Jill with a handwritten greeting</strong>. Parent DMs pinned like notes on a corkboard. A three-circle storyboard of "what happens next." Eight real Bergen County town pills. Caveat script sprinkled throughout. This is the version that makes Jill the brand.</p>
+          <div class="swatches">
+            <span class="swatch" style="background:#f5ede0"></span>
+            <span class="swatch" style="background:#6b7d6c"></span>
+            <span class="swatch" style="background:#4a6c8a"></span>
+            <span class="swatch" style="background:#d6a574"></span>
+            <span class="swatch" style="background:#ece0c8"></span>
+          </div>
+          <div class="cta-row">
+            <span class="open">Open option 04</span>
+            <span class="meta">For: word-of-mouth from the school pickup line.</span>
+          </div>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap inner">
+    <div>Pick one, name a hybrid, or tell me "start over again." Any of those is useful.</div>
+    <div>Overnight work · April 21, 2026</div>
+  </div>
+</footer>
+
+</body>
+</html>

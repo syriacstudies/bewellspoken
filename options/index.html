@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="googlebot" content="noindex, nofollow">
+<title>Well Spoken · Private preview</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..500;1,9..144,400..500&family=Inter:wght@400;500&family=Caveat:wght@500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0f1412;
+    --panel:#17201c;
+    --ink:#eef0ec;
+    --ink-soft:#b8c1ba;
+    --muted:#8c938d;
+    --rule:rgba(238,240,236,.12);
+    --accent:#c4d0c6;
+  }
+  *,*::before,*::after{box-sizing:border-box}
+  html,body{margin:0;padding:0;height:100%}
+  body{
+    background:var(--bg);color:var(--ink);
+    font-family:"Inter",system-ui,sans-serif;font-size:15px;line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    min-height:100%;display:flex;align-items:center;justify-content:center;padding:40px 20px;
+  }
+  .card{
+    width:100%;max-width:440px;
+    background:var(--panel);border:1px solid var(--rule);border-radius:20px;
+    padding:40px 36px 34px;
+  }
+  .eyebrow{
+    font-family:"Caveat",cursive;font-size:24px;color:var(--accent);line-height:1;margin-bottom:10px;
+  }
+  h1{
+    font-family:"Fraunces",serif;font-weight:400;font-size:28px;line-height:1.15;letter-spacing:-.01em;
+    margin:0 0 14px;
+  }
+  p.lede{
+    font-size:14.5px;line-height:1.55;color:var(--ink-soft);margin:0 0 26px;
+  }
+  form{display:flex;flex-direction:column;gap:12px}
+  label{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+  input[type="password"]{
+    background:#0f1714;border:1px solid var(--rule);border-radius:12px;
+    padding:14px 16px;font-size:15px;font-family:inherit;color:var(--ink);
+    outline:none;transition:border-color .15s ease;
+  }
+  input[type="password"]:focus{border-color:var(--accent)}
+  button{
+    appearance:none;border:0;cursor:pointer;
+    background:var(--ink);color:var(--bg);
+    font-family:inherit;font-weight:500;font-size:14px;letter-spacing:.02em;
+    padding:14px 20px;border-radius:999px;margin-top:6px;
+  }
+  button:hover{opacity:.92}
+  .err{
+    font-size:13px;color:#e2a7a0;min-height:18px;margin-top:4px;font-style:italic;
+  }
+  .foot{
+    margin-top:28px;padding-top:20px;border-top:1px solid var(--rule);
+    font-family:"Fraunces",serif;font-style:italic;font-size:12.5px;color:var(--muted);line-height:1.5;
+  }
+</style>
+</head>
+<body>
+  <main class="card">
+    <div class="eyebrow">Well Spoken</div>
+    <h1>Private preview</h1>
+    <p class="lede">This page is a work in progress we are sharing with a small group for feedback. Enter the password to continue.</p>
+    <form id="gateForm" autocomplete="off">
+      <label for="pw">Password</label>
+      <input id="pw" type="password" autocomplete="off" autofocus required>
+      <div class="err" id="err" aria-live="polite"></div>
+      <button type="submit">Enter</button>
+    </form>
+    <div class="foot">If you were not given a password, email jill@bewellspoken.com and we will send one over.</div>
+  </main>
+
+<script>
+(function(){
+  var EXPECTED = "97897a111d485af1048bece173d2980a15870ca079281b79c7ca755356847602";
+  var GATE_KEY = "ws_gate_v1";
+
+  // If already unlocked in this tab, skip the gate.
+  try{
+    if (sessionStorage.getItem(GATE_KEY) === "1") {
+      window.location.replace("pick.html");
+      return;
+    }
+  }catch(e){}
+
+  async function sha256(s){
+    var buf = new TextEncoder().encode(s);
+    var hash = await crypto.subtle.digest("SHA-256", buf);
+    return Array.from(new Uint8Array(hash)).map(function(b){return b.toString(16).padStart(2,"0")}).join("");
+  }
+
+  var form = document.getElementById("gateForm");
+  var pw = document.getElementById("pw");
+  var err = document.getElementById("err");
+
+  form.addEventListener("submit", async function(ev){
+    ev.preventDefault();
+    err.textContent = "";
+    var value = (pw.value || "").trim().toLowerCase();
+    if (!value) return;
+    var hashed = await sha256(value);
+    if (hashed === EXPECTED) {
+      try { sessionStorage.setItem(GATE_KEY, "1"); } catch(e){}
+      window.location.replace("pick.html");
+    } else {
+      err.textContent = "That password did not match. Try again.";
+      pw.select();
+    }
+  });
+})();
+</script>
+</body>
+</html>

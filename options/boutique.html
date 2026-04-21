@@ -1,0 +1,401 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="googlebot" content="noindex, nofollow">
+<script>(function(){try{if(sessionStorage.getItem("ws_gate_v1")!=="1"){window.location.replace("./");return;}}catch(e){window.location.replace("./");}})();</script>
+
+<title>Well Spoken — Boutique direction</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,200..500;1,9..144,200..500&family=Inter:wght@400;500&family=Caveat:wght@500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#efe7d6;
+    --cream-2:#e6dcc4;
+    --sage:#dfe8df;
+    --sage-2:#c9d6c7;
+    --sage-deep:#8ba28e;
+    --forest:#3f4e45;
+    --ink:#2a332d;
+    --whisper-blue:#d9e3ec;
+    --sand:#e8ddc4;
+    --muted:#877d6a;
+  }
+  *,*::before,*::after{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{
+    background:var(--cream);
+    color:var(--ink);
+    font-family:"Inter",system-ui,sans-serif;
+    font-size:16px;line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  img{max-width:100%;display:block}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1280px;margin:0 auto;padding:0 48px}
+  .narrow{max-width:760px;margin:0 auto;padding:0 32px}
+
+  .option-tag{
+    position:fixed;top:18px;right:18px;z-index:200;
+    background:rgba(42,51,45,.9);color:var(--cream);
+    font-family:"Inter",sans-serif;font-size:11px;letter-spacing:.12em;text-transform:uppercase;
+    padding:9px 15px;border-radius:999px;backdrop-filter:blur(8px);
+  }
+  .option-tag a{margin-left:10px;border-bottom:1px dotted rgba(239,231,214,.6)}
+
+  /* Full-bleed hero */
+  .hero{
+    position:relative;
+    min-height:100vh;
+    background:#1a2320;
+    color:var(--cream);
+    overflow:hidden;
+  }
+  .hero::before{
+    content:"";position:absolute;inset:0;
+    background:
+      linear-gradient(180deg, rgba(20,28,24,.15) 0%, rgba(20,28,24,.0) 22%, rgba(20,28,24,.0) 55%, rgba(20,28,24,.65) 100%),
+      url("https://images.pexels.com/photos/7979782/pexels-photo-7979782.jpeg?auto=compress&cs=tinysrgb&w=2400") center 30% / cover no-repeat;
+  }
+  .hero-top{
+    position:relative;z-index:2;
+    display:flex;justify-content:space-between;align-items:center;
+    padding:32px 48px;
+  }
+  .hero-top .wordmark{
+    font-family:"Fraunces",serif;font-weight:300;font-size:22px;letter-spacing:.06em;color:var(--cream);
+  }
+  .hero-top .wordmark em{font-style:italic;font-weight:300}
+  .hero-top nav{display:flex;gap:28px;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:rgba(239,231,214,.88)}
+  .hero-top nav a.primary{border:1px solid rgba(239,231,214,.6);padding:9px 18px;border-radius:999px}
+  .hero-body{
+    position:relative;z-index:2;
+    min-height:calc(100vh - 80px);
+    display:flex;align-items:flex-end;
+    padding:0 48px 72px;
+  }
+  .hero-inner{max-width:780px}
+  .hero .eyebrow{
+    font-family:"Caveat",cursive;font-size:26px;color:var(--cream);opacity:.9;
+    margin-bottom:18px;
+  }
+  .hero h1{
+    font-family:"Fraunces",serif;font-weight:300;
+    font-size:clamp(2.6rem, 5.6vw, 5rem);line-height:1.05;letter-spacing:-.02em;
+    margin:0 0 28px;color:var(--cream);
+  }
+  .hero h1 em{font-style:italic;font-weight:300}
+  .hero .sub{
+    font-family:"Fraunces",serif;font-weight:300;font-style:italic;
+    font-size:clamp(18px, 1.6vw, 22px);line-height:1.5;color:rgba(239,231,214,.88);
+    max-width:48ch;margin:0 0 38px;
+  }
+  .hero .ctas{display:flex;gap:14px;align-items:center;flex-wrap:wrap}
+  .hero .btn{
+    font-family:"Inter",sans-serif;font-size:12px;letter-spacing:.14em;text-transform:uppercase;
+    padding:18px 32px;border-radius:999px;
+  }
+  .hero .btn.primary{background:var(--cream);color:var(--ink)}
+  .hero .btn.ghost{color:var(--cream);border:1px solid rgba(239,231,214,.55)}
+
+  /* Soft sage opening paragraph band */
+  .invitation{
+    background:var(--sage);
+    padding:120px 0;text-align:center;
+  }
+  .sprig{
+    width:42px;height:42px;margin:0 auto 24px;
+    background:var(--forest);
+    -webkit-mask:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 42 42'><path d='M21 4c6 6 10 12 10 18 0 8-5 14-10 16-5-2-10-8-10-16 0-6 4-12 10-18z' fill='black'/><path d='M21 8v30' stroke='black' stroke-width='1' fill='none'/></svg>") no-repeat center/contain;
+          mask:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 42 42'><path d='M21 4c6 6 10 12 10 18 0 8-5 14-10 16-5-2-10-8-10-16 0-6 4-12 10-18z' fill='black'/><path d='M21 8v30' stroke='black' stroke-width='1' fill='none'/></svg>") no-repeat center/contain;
+  }
+  .invitation .eyebrow{
+    font-family:"Inter",sans-serif;font-size:11px;letter-spacing:.28em;text-transform:uppercase;
+    color:var(--forest);margin-bottom:32px;
+  }
+  .invitation p{
+    font-family:"Fraunces",serif;font-weight:300;font-style:italic;
+    font-size:clamp(22px,2.4vw,30px);line-height:1.4;color:var(--forest);
+    max-width:30ch;margin:0 auto;
+  }
+
+  /* Image + text alternation — each pillar */
+  .pillar{padding:120px 0;background:var(--cream)}
+  .pillar .grid{
+    display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;
+    max-width:1240px;margin:0 auto;padding:0 48px;
+  }
+  .pillar .art{aspect-ratio:4/5;overflow:hidden;background:var(--cream-2)}
+  .pillar .art img{width:100%;height:100%;object-fit:cover}
+  .pillar.reverse .grid > div:first-child{order:2}
+  .pillar .eyebrow{
+    font-family:"Inter",sans-serif;font-size:11px;letter-spacing:.28em;text-transform:uppercase;
+    color:var(--sage-deep);margin-bottom:22px;
+  }
+  .pillar h2{
+    font-family:"Fraunces",serif;font-weight:300;
+    font-size:clamp(2rem, 3.4vw, 3rem);line-height:1.12;letter-spacing:-.015em;
+    margin:0 0 22px;color:var(--forest);
+  }
+  .pillar h2 em{font-style:italic}
+  .pillar p{
+    font-family:"Fraunces",serif;font-weight:400;
+    font-size:19px;line-height:1.6;color:var(--ink);max-width:48ch;
+  }
+  .pillar .more{
+    display:inline-block;margin-top:28px;
+    font-family:"Inter",sans-serif;font-size:12px;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--forest);border-bottom:1px solid var(--forest);padding-bottom:4px;
+  }
+  .pillar.sage-ground{background:var(--sage)}
+  .pillar.sand-ground{background:var(--sand)}
+
+  /* Three image staggered grid — a day in our practice */
+  .triptych{
+    padding:140px 0 120px;
+    background:var(--cream);
+  }
+  .triptych .head{text-align:center;margin-bottom:72px}
+  .triptych .eyebrow{
+    font-family:"Inter",sans-serif;font-size:11px;letter-spacing:.28em;text-transform:uppercase;
+    color:var(--sage-deep);margin-bottom:18px;
+  }
+  .triptych h2{
+    font-family:"Fraunces",serif;font-weight:300;font-style:italic;
+    font-size:clamp(2rem,3vw,2.7rem);margin:0;color:var(--forest);
+  }
+  .triptych-grid{
+    display:grid;grid-template-columns:repeat(12,1fr);gap:24px;
+    max-width:1240px;margin:0 auto;padding:0 48px;
+  }
+  .trip{overflow:hidden;background:var(--cream-2)}
+  .trip img{width:100%;height:100%;object-fit:cover;display:block}
+  .trip.a{grid-column:1/6;aspect-ratio:4/5;margin-top:60px}
+  .trip.b{grid-column:6/10;aspect-ratio:1/1}
+  .trip.c{grid-column:10/13;aspect-ratio:3/4;margin-top:40px}
+  .trip-caption{
+    max-width:1240px;margin:48px auto 0;padding:0 48px;
+    font-family:"Fraunces",serif;font-style:italic;color:var(--muted);font-size:14px;
+    display:grid;grid-template-columns:repeat(12,1fr);gap:24px;
+  }
+  .trip-caption span{grid-column:span 4}
+
+  /* Large quote */
+  .quote{
+    background:var(--cream);padding:160px 0;position:relative;
+  }
+  .quote::before,.quote::after{
+    content:"";position:absolute;left:50%;transform:translateX(-50%);width:1px;height:64px;background:var(--sage-deep);opacity:.4;
+  }
+  .quote::before{top:0}
+  .quote::after{bottom:0}
+  .quote blockquote{
+    max-width:980px;margin:0 auto;padding:0 48px;text-align:center;
+    font-family:"Fraunces",serif;font-weight:300;font-style:italic;
+    font-size:clamp(1.9rem, 3vw, 2.7rem);line-height:1.2;color:var(--forest);
+  }
+  .quote .attrib{
+    margin-top:40px;text-align:center;
+    font-family:"Inter",sans-serif;font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--sage-deep);
+  }
+
+  /* Jill circle */
+  .jill{
+    background:var(--sage);padding:140px 0 130px;text-align:center;
+  }
+  .jill .portrait-wrap{
+    width:260px;height:260px;margin:0 auto 40px;
+    position:relative;isolation:isolate;
+  }
+  .jill .portrait-wrap img{
+    width:260px;height:260px;border-radius:50%;object-fit:cover;object-position:center 22%;
+    position:relative;z-index:1;box-shadow:0 30px 60px rgba(20,28,24,.14);
+  }
+  .jill .portrait-wrap::after{
+    content:"";position:absolute;top:14px;left:-14px;width:260px;height:260px;
+    border:1px solid var(--forest);border-radius:50%;opacity:.55;z-index:0;
+  }
+  .jill .eyebrow{
+    font-family:"Caveat",cursive;font-size:28px;color:var(--forest);margin-bottom:14px;
+  }
+  .jill h2{
+    font-family:"Fraunces",serif;font-weight:300;
+    font-size:clamp(1.8rem,2.6vw,2.4rem);line-height:1.2;margin:0 auto 24px;
+    max-width:22ch;color:var(--forest);
+  }
+  .jill p{
+    font-family:"Fraunces",serif;font-weight:400;font-size:17px;line-height:1.6;color:var(--ink);
+    max-width:54ch;margin:0 auto 32px;
+  }
+  .jill .btn{
+    display:inline-flex;align-items:center;gap:12px;
+    background:var(--forest);color:var(--cream);
+    font-family:"Inter",sans-serif;font-size:12px;letter-spacing:.16em;text-transform:uppercase;
+    padding:18px 34px;border-radius:999px;
+  }
+  .jill .credential{
+    margin-top:26px;font-family:"Fraunces",serif;font-style:italic;font-size:13px;color:var(--muted);
+  }
+
+  /* Footer close */
+  .close{
+    background:var(--forest);color:var(--cream);
+    padding:140px 0 100px;text-align:center;
+  }
+  .close h2{
+    font-family:"Fraunces",serif;font-weight:300;font-style:italic;
+    font-size:clamp(2.4rem,4vw,3.4rem);line-height:1.1;margin:0 auto 24px;max-width:20ch;color:var(--cream);
+  }
+  .close p{font-family:"Fraunces",serif;font-style:italic;color:rgba(239,231,214,.78);max-width:46ch;margin:0 auto 44px}
+  .close .btn{
+    display:inline-block;background:var(--cream);color:var(--forest);
+    font-family:"Inter",sans-serif;font-size:12px;letter-spacing:.16em;text-transform:uppercase;
+    padding:20px 40px;border-radius:999px;
+  }
+  .close .colophon{
+    margin-top:100px;padding-top:32px;border-top:1px solid rgba(239,231,214,.2);
+    font-family:"Fraunces",serif;font-style:italic;font-size:13px;color:rgba(239,231,214,.6);
+  }
+
+  @media (max-width:900px){
+    .wrap,.pillar .grid,.triptych-grid,.trip-caption{padding-left:24px;padding-right:24px}
+    .hero-top{padding:22px 24px;flex-wrap:wrap;gap:14px}
+    .hero-top nav{gap:14px;font-size:10px}
+    .hero-body{padding:60px 24px 60px;align-items:flex-end;min-height:88vh}
+    .pillar{padding:72px 0}
+    .pillar .grid{grid-template-columns:1fr;gap:40px}
+    .pillar.reverse .grid > div:first-child{order:0}
+    .pillar .art{max-height:500px}
+    .invitation{padding:72px 0}
+    .triptych{padding:80px 0 72px}
+    .triptych-grid{grid-template-columns:1fr}
+    .trip.a,.trip.b,.trip.c{grid-column:1/-1;margin-top:0}
+    .trip.a,.trip.c{aspect-ratio:5/4}
+    .trip-caption{grid-template-columns:1fr;gap:12px}
+    .trip-caption span{grid-column:1/-1}
+    .quote{padding:100px 0}
+    .jill{padding:90px 0 88px}
+    .close{padding:96px 0 80px}
+  }
+</style>
+</head>
+<body>
+
+<div class="option-tag">Option 2 · Boutique <a href="index.html">back</a></div>
+
+<section class="hero">
+  <div class="hero-top">
+    <div class="wordmark"><em>Well</em> Spoken</div>
+    <nav>
+      <a href="#">Library</a>
+      <a href="#">Check In</a>
+      <a href="#">At Home</a>
+      <a href="#" class="primary">Write to Jill</a>
+    </nav>
+  </div>
+  <div class="hero-body">
+    <div class="hero-inner">
+      <div class="eyebrow">For the parent who noticed first</div>
+      <h1>A quiet place to bring <em>what you have been watching</em>.</h1>
+      <p class="sub">Well Spoken is a concierge practice for Bergen County families, led by a licensed speech-language pathologist who reads every note herself.</p>
+      <div class="ctas">
+        <a href="#" class="btn primary">Begin with a short note</a>
+        <a href="#" class="btn ghost">See how it works</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="invitation">
+  <div class="sprig"></div>
+  <div class="eyebrow">What this place is</div>
+  <p>Something small and personal before the clinic, the pediatrician, the long wait. One person. One careful reading. A first conversation.</p>
+</section>
+
+<section class="pillar">
+  <div class="grid">
+    <div class="art">
+      <img src="https://images.pexels.com/photos/4473398/pexels-photo-4473398.jpeg?auto=compress&cs=tinysrgb&w=1400" alt="A parent reading a picture book with a young child">
+    </div>
+    <div>
+      <div class="eyebrow">First · read</div>
+      <h2>A library for the <em>parent who is keeping notes.</em></h2>
+      <p>Essays on late talking, articulation, feeding, and the small worry you have not quite named. All written for parents, all reviewed by a speech-language pathologist, none of them thinly rewritten from a clinic brochure.</p>
+      <a href="#" class="more">Open the library</a>
+    </div>
+  </div>
+</section>
+
+<section class="pillar sage-ground reverse">
+  <div class="grid">
+    <div class="art">
+      <img src="https://images.pexels.com/photos/4050320/pexels-photo-4050320.jpeg?auto=compress&cs=tinysrgb&w=1400" alt="A notebook and pen on a warm wooden surface">
+    </div>
+    <div>
+      <div class="eyebrow">Then · check in</div>
+      <h2>Five minutes, five questions, one read that <em>actually applies to your child.</em></h2>
+      <p>Our short online check in asks what you are seeing, at what age, and how it has changed. It ends with a specific read and a specific next step. No form letter. No automated nudge.</p>
+      <a href="#" class="more">Begin the check in</a>
+    </div>
+  </div>
+</section>
+
+<section class="pillar sand-ground">
+  <div class="grid">
+    <div class="art">
+      <img src="https://images.pexels.com/photos/3662665/pexels-photo-3662665.jpeg?auto=compress&cs=tinysrgb&w=1400" alt="A parent sitting on the floor with a child surrounded by soft light">
+    </div>
+    <div>
+      <div class="eyebrow">At home · try</div>
+      <h2>Eight small things you can do before <em>anything else changes.</em></h2>
+      <p>Narrate the kitchen. Slow your speech in half. Name the feeling, then the reason. Short, specific practices you can fold into a Tuesday afternoon, each one tuned for the age your child is now.</p>
+      <a href="#" class="more">See the practices</a>
+    </div>
+  </div>
+</section>
+
+<section class="triptych">
+  <div class="head">
+    <div class="eyebrow">Inside our practice</div>
+    <h2>Small details from a day at Well Spoken.</h2>
+  </div>
+  <div class="triptych-grid">
+    <div class="trip a"><img src="https://images.pexels.com/photos/4021808/pexels-photo-4021808.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="A hand writing in a journal in natural light"></div>
+    <div class="trip b"><img src="https://images.pexels.com/photos/3662630/pexels-photo-3662630.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="A young child arranging wooden toys"></div>
+    <div class="trip c"><img src="https://images.pexels.com/photos/256455/pexels-photo-256455.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Books stacked on a wooden surface"></div>
+  </div>
+  <div class="trip-caption">
+    <span>01 · Each note Jill receives is read and annotated by hand.</span>
+    <span>02 · The youngest clients come in with their parents, and a small table of objects they already love.</span>
+    <span>03 · The reading list is revised weekly, kept short on purpose.</span>
+  </div>
+</section>
+
+<section class="quote">
+  <blockquote>"Step one is you telling me what you are seeing. Step two is me reading it. Step three is a first conversation, thirty minutes, with someone I picked for you."</blockquote>
+  <div class="attrib">Jill Benyamine, MA, CCC-SLP</div>
+</section>
+
+<section class="jill">
+  <div class="portrait-wrap">
+    <img src="assets/jill.jpg" alt="Jill Benyamine, founder of Well Spoken">
+  </div>
+  <div class="eyebrow">The person you are writing to</div>
+  <h2>A licensed speech-language pathologist, and a mother, who wanted there to be a softer first door.</h2>
+  <p>Jill trained in New York and practiced in Bergen County schools and clinics for ten years. She started Well Spoken because her friends kept calling her with the same kind of note, and she wanted a real place to send them.</p>
+  <a href="#" class="btn">Write to Jill</a>
+  <div class="credential">MA, CCC-SLP · Licensed in New Jersey and New York</div>
+</section>
+
+<section class="close">
+  <h2>Tell us what you are noticing.</h2>
+  <p>One short note is the whole beginning. Jill reads every one herself and writes back within a business day. Free for families.</p>
+  <a href="#" class="btn">Begin with a note</a>
+  <div class="colophon">Well Spoken · Bergen County, New Jersey · hello@bewellspoken.com</div>
+</section>
+
+</body>
+</html>

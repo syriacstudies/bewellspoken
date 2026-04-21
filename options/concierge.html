@@ -1,0 +1,452 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="googlebot" content="noindex, nofollow">
+<script>(function(){try{if(sessionStorage.getItem("ws_gate_v1")!=="1"){window.location.replace("./");return;}}catch(e){window.location.replace("./");}})();</script>
+
+<title>Well Spoken — Concierge direction</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..600;1,9..144,400..600&family=Inter:wght@400;500;600&family=Caveat:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#f5ede0;
+    --cream-2:#ece0c8;
+    --cream-3:#e4d4b3;
+    --ink:#2a2b24;
+    --ink-soft:#4a4a3e;
+    --muted:#857d6a;
+    --olive:#6b7d6c;
+    --olive-deep:#4a5b4b;
+    --olive-soft:#d6dfd4;
+    --blue:#4a6c8a;
+    --blue-deep:#2f4a63;
+    --blue-soft:#d9e3ec;
+    --warm:#d6a574;
+    --rule:rgba(42,43,36,.12);
+  }
+  *,*::before,*::after{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{
+    background:var(--cream);
+    color:var(--ink);
+    font-family:"Inter",system-ui,sans-serif;
+    font-size:16px;line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  img{max-width:100%;display:block}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1220px;margin:0 auto;padding:0 40px}
+
+  .option-tag{
+    position:fixed;top:16px;right:16px;z-index:200;
+    background:var(--ink);color:var(--cream);
+    font-family:"Inter",sans-serif;font-size:11px;letter-spacing:.12em;text-transform:uppercase;
+    padding:8px 14px;border-radius:999px;
+  }
+  .option-tag a{margin-left:10px;border-bottom:1px dotted rgba(245,237,224,.5)}
+
+  /* Nav */
+  .nav{padding:26px 0 18px}
+  .nav .inner{display:flex;align-items:center;justify-content:space-between;gap:24px}
+  .wordmark{
+    font-family:"Caveat",cursive;font-weight:700;font-size:42px;color:var(--blue-deep);letter-spacing:-.01em;line-height:1;
+  }
+  .nav-links{display:flex;gap:30px;font-size:14px;color:var(--ink-soft)}
+  .nav-links a{position:relative}
+  .nav-links a:hover{color:var(--blue-deep)}
+  .nav-cta{
+    background:var(--blue-deep);color:var(--cream);font-size:13px;font-weight:500;
+    padding:11px 20px;border-radius:999px;
+  }
+
+  /* Hero — a letter from Jill */
+  .hero{padding:34px 0 90px}
+  .hero .grid{
+    display:grid;grid-template-columns:.95fr 1fr;gap:72px;align-items:center;
+  }
+  .hero .portrait-frame{
+    position:relative;aspect-ratio:4/5;isolation:isolate;
+  }
+  .hero .portrait-frame img{
+    width:100%;height:100%;object-fit:cover;object-position:center 18%;
+    position:relative;z-index:1;box-shadow:0 30px 70px rgba(42,43,36,.18);
+  }
+  .hero .portrait-frame::after{
+    content:"";position:absolute;top:22px;left:-22px;width:100%;height:100%;
+    border:1.5px solid var(--blue);z-index:0;
+  }
+  .hero .portrait-frame .tape{
+    position:absolute;top:-14px;left:30%;
+    width:110px;height:28px;background:rgba(214,165,116,.45);
+    transform:rotate(-3deg);z-index:2;
+  }
+  .hero .portrait-frame .cap{
+    position:absolute;bottom:-34px;right:-10px;z-index:3;
+    font-family:"Caveat",cursive;color:var(--blue-deep);font-size:22px;
+    background:var(--cream);padding:6px 14px;transform:rotate(-2deg);
+  }
+  .hero .letter .greet{
+    font-family:"Caveat",cursive;font-weight:600;font-size:34px;color:var(--blue-deep);
+    margin-bottom:22px;line-height:1;
+  }
+  .hero .letter h1{
+    font-family:"Fraunces",serif;font-weight:500;
+    font-size:clamp(2rem, 3.8vw, 3.2rem);line-height:1.1;letter-spacing:-.015em;
+    color:var(--ink);margin:0 0 22px;
+  }
+  .hero .letter h1 em{font-style:italic;color:var(--olive-deep);font-weight:500}
+  .hero .letter p{font-size:17px;color:var(--ink-soft);line-height:1.65;margin:0 0 14px;max-width:50ch}
+  .hero .letter .sig{
+    margin-top:26px;font-family:"Caveat",cursive;font-size:38px;color:var(--blue-deep);line-height:.9;
+  }
+  .hero .letter .credential{font-family:"Fraunces",serif;font-style:italic;font-size:13px;color:var(--muted);margin-top:2px;margin-bottom:30px}
+  .hero .letter .cta-row{display:flex;align-items:center;gap:22px;flex-wrap:wrap}
+  .hero .letter .btn{
+    background:var(--blue-deep);color:var(--cream);
+    font-family:"Inter",sans-serif;font-weight:500;font-size:14px;letter-spacing:.04em;
+    padding:16px 30px;border-radius:999px;
+  }
+  .hero .letter .note{font-family:"Caveat",cursive;color:var(--olive-deep);font-size:20px;line-height:1.1;max-width:24ch}
+
+  /* About this place — olive band */
+  .about{
+    background:var(--olive-deep);color:var(--cream);padding:80px 0;
+  }
+  .about .grid{
+    display:grid;grid-template-columns:1fr 1.3fr;gap:64px;align-items:center;
+  }
+  .about .eyebrow{font-family:"Caveat",cursive;font-size:26px;color:var(--olive-soft);margin-bottom:14px}
+  .about h2{
+    font-family:"Fraunces",serif;font-weight:500;font-size:clamp(1.9rem,3vw,2.6rem);line-height:1.12;
+    margin:0 0 20px;color:var(--cream);letter-spacing:-.01em;
+  }
+  .about h2 em{font-style:italic}
+  .about p{font-family:"Fraunces",serif;font-weight:400;font-size:17px;line-height:1.65;color:rgba(245,237,224,.85);margin:0 0 14px;max-width:48ch}
+  .about .tiles{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .about .tile{aspect-ratio:4/5;overflow:hidden;background:rgba(245,237,224,.06)}
+  .about .tile:nth-child(2){margin-top:40px}
+  .about .tile img{width:100%;height:100%;object-fit:cover;filter:saturate(.92)}
+
+  /* What parents send me — pinned notes / bulletin board */
+  .parents{
+    padding:100px 0 80px;background:var(--cream);
+  }
+  .parents .head{text-align:center;margin-bottom:50px}
+  .parents .eyebrow{font-family:"Caveat",cursive;font-size:28px;color:var(--blue-deep);margin-bottom:10px}
+  .parents h2{font-family:"Fraunces",serif;font-weight:500;font-size:clamp(1.9rem,2.8vw,2.4rem);margin:0 auto;max-width:28ch;line-height:1.15;letter-spacing:-.01em}
+  .parents-grid{
+    display:grid;grid-template-columns:repeat(12,1fr);gap:24px;
+  }
+  .note-card{
+    background:var(--cream-2);padding:28px 28px 26px;
+    border-radius:2px;
+    position:relative;box-shadow:0 14px 30px rgba(42,43,36,.1);
+  }
+  .note-card::before{
+    content:"";position:absolute;top:-10px;left:50%;transform:translateX(-50%);
+    width:44px;height:14px;background:rgba(214,165,116,.55);
+  }
+  .note-card.a{grid-column:span 4;transform:rotate(-1deg);margin-top:10px}
+  .note-card.b{grid-column:span 4;transform:rotate(1deg);background:var(--cream-3)}
+  .note-card.c{grid-column:span 4;transform:rotate(-.5deg);margin-top:22px}
+  .note-card.d{grid-column:span 6;transform:rotate(.8deg);background:var(--olive-soft);color:var(--olive-deep)}
+  .note-card.e{grid-column:span 6;transform:rotate(-1deg);background:var(--blue-soft);color:var(--blue-deep)}
+  .note-card .text{
+    font-family:"Fraunces",serif;font-size:18px;line-height:1.5;color:var(--ink);margin:0 0 16px;
+  }
+  .note-card.d .text,.note-card.e .text{color:inherit}
+  .note-card .from{
+    font-family:"Caveat",cursive;font-size:22px;color:var(--muted);
+  }
+  .note-card.d .from,.note-card.e .from{color:rgba(0,0,0,.5)}
+
+  /* What happens next — storyboard */
+  .story{padding:96px 0;background:var(--olive-soft)}
+  .story .head{text-align:center;margin-bottom:56px}
+  .story .eyebrow{font-family:"Caveat",cursive;font-size:28px;color:var(--olive-deep);margin-bottom:10px}
+  .story h2{font-family:"Fraunces",serif;font-weight:500;font-size:clamp(1.9rem,2.8vw,2.4rem);margin:0;max-width:28ch;margin-inline:auto;line-height:1.15;color:var(--olive-deep);letter-spacing:-.01em}
+  .story-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:36px;position:relative}
+  .story-grid::before{
+    content:"";position:absolute;top:110px;left:13%;right:13%;height:2px;
+    background:repeating-linear-gradient(90deg,var(--olive-deep) 0 6px,transparent 6px 14px);opacity:.35;
+  }
+  .story-panel{text-align:center;position:relative}
+  .story-panel .circle{
+    width:220px;height:220px;border-radius:50%;overflow:hidden;margin:0 auto 28px;
+    background:var(--cream);position:relative;z-index:2;
+    box-shadow:0 20px 40px rgba(42,43,36,.14);border:4px solid var(--cream);
+  }
+  .story-panel .circle img{width:100%;height:100%;object-fit:cover}
+  .story-panel .step-num{
+    font-family:"Caveat",cursive;font-size:26px;color:var(--olive-deep);margin-bottom:6px;
+  }
+  .story-panel h3{font-family:"Fraunces",serif;font-weight:500;font-size:22px;margin:0 0 10px;color:var(--ink);letter-spacing:-.01em}
+  .story-panel p{font-size:15px;color:var(--ink-soft);max-width:32ch;margin:0 auto;line-height:1.55}
+
+  /* Bergen neighborhood */
+  .local{padding:96px 0;background:var(--cream)}
+  .local .grid{display:grid;grid-template-columns:1.2fr 1fr;gap:64px;align-items:center}
+  .local .eyebrow{font-family:"Caveat",cursive;font-size:28px;color:var(--blue-deep);margin-bottom:10px}
+  .local h2{font-family:"Fraunces",serif;font-weight:500;font-size:clamp(1.9rem,3vw,2.6rem);line-height:1.12;margin:0 0 20px;color:var(--ink);letter-spacing:-.01em}
+  .local h2 em{font-style:italic;color:var(--olive-deep)}
+  .local p{font-size:17px;line-height:1.65;color:var(--ink-soft);margin:0 0 16px;max-width:48ch}
+  .local .towns{
+    display:flex;flex-wrap:wrap;gap:10px;margin-top:28px;
+  }
+  .local .town{
+    font-family:"Caveat",cursive;font-size:22px;color:var(--olive-deep);
+    background:var(--olive-soft);padding:6px 18px;border-radius:999px;line-height:1;
+  }
+  .local .art{
+    position:relative;aspect-ratio:4/5;overflow:hidden;
+  }
+  .local .art img{width:100%;height:100%;object-fit:cover}
+  .local .art .tag{
+    position:absolute;bottom:20px;left:20px;background:var(--cream);
+    padding:10px 16px;font-family:"Caveat",cursive;font-size:20px;color:var(--blue-deep);
+  }
+
+  /* Feature testimonial */
+  .feature-quote{
+    padding:96px 0;background:var(--blue-soft);
+  }
+  .feature-quote .grid{display:grid;grid-template-columns:auto 1fr;gap:48px;align-items:center;max-width:1000px;margin:0 auto;padding:0 40px}
+  .feature-quote .face{
+    width:180px;height:180px;border-radius:50%;overflow:hidden;flex-shrink:0;
+    background:var(--cream-2);box-shadow:0 18px 40px rgba(31,74,99,.18);
+  }
+  .feature-quote .face img{width:100%;height:100%;object-fit:cover}
+  .feature-quote .quote-mark{
+    font-family:"Fraunces",serif;font-style:italic;font-size:80px;line-height:.8;color:var(--blue-deep);opacity:.3;margin-bottom:-10px;
+  }
+  .feature-quote blockquote{
+    margin:0;font-family:"Fraunces",serif;font-style:italic;font-size:clamp(1.4rem,2.2vw,1.8rem);line-height:1.35;color:var(--blue-deep);
+  }
+  .feature-quote .attrib{
+    margin-top:20px;font-family:"Caveat",cursive;font-size:22px;color:var(--blue-deep);opacity:.75;
+  }
+
+  /* Close — tell me what you are noticing */
+  .close{
+    padding:120px 0 100px;background:var(--cream);text-align:center;position:relative;overflow:hidden;
+  }
+  .close .eyebrow{font-family:"Caveat",cursive;font-size:28px;color:var(--blue-deep);margin-bottom:12px}
+  .close h2{
+    font-family:"Fraunces",serif;font-weight:500;font-style:italic;
+    font-size:clamp(2.2rem,4vw,3.4rem);line-height:1.1;margin:0 auto 24px;max-width:20ch;color:var(--ink);letter-spacing:-.015em;
+  }
+  .close p{font-family:"Fraunces",serif;font-size:17px;color:var(--ink-soft);max-width:46ch;margin:0 auto 40px}
+  .close .arrow-note{
+    display:inline-block;position:relative;margin-bottom:20px;
+    font-family:"Caveat",cursive;font-size:26px;color:var(--olive-deep);transform:rotate(-4deg);
+  }
+  .close .arrow-note::after{
+    content:"";position:absolute;left:50%;bottom:-28px;width:40px;height:50px;
+    background:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 50' fill='none'><path d='M20 2 Q 10 15 22 28 Q 34 40 20 48' stroke='%234a5b4b' stroke-width='1.5' fill='none' stroke-linecap='round'/><path d='M15 42 L 20 48 L 26 42' stroke='%234a5b4b' stroke-width='1.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/></svg>") no-repeat center/contain;
+    transform:translateX(-50%);
+  }
+  .close .btn{
+    display:inline-block;background:var(--blue-deep);color:var(--cream);
+    font-family:"Inter",sans-serif;font-weight:500;font-size:15px;letter-spacing:.02em;
+    padding:20px 40px;border-radius:999px;margin-top:32px;
+  }
+  .close .fine{font-family:"Fraunces",serif;font-style:italic;font-size:13px;color:var(--muted);margin-top:24px}
+
+  footer{padding:44px 0;background:var(--olive-deep);color:rgba(245,237,224,.8);font-size:13px}
+  footer .inner{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
+  footer a{color:var(--cream)}
+
+  @media (max-width:900px){
+    .hero .grid{grid-template-columns:1fr;gap:48px}
+    .hero .portrait-frame{max-width:320px;margin:0 auto 24px}
+    .about .grid{grid-template-columns:1fr;gap:40px}
+    .about .tile:nth-child(2){margin-top:0}
+    .parents-grid{grid-template-columns:1fr;gap:20px}
+    .note-card.a,.note-card.b,.note-card.c,.note-card.d,.note-card.e{grid-column:1/-1;transform:none;margin-top:0}
+    .story-grid{grid-template-columns:1fr;gap:40px}
+    .story-grid::before{display:none}
+    .story-panel .circle{width:180px;height:180px}
+    .local .grid{grid-template-columns:1fr;gap:40px}
+    .local .art{max-width:420px;margin:0 auto}
+    .feature-quote .grid{grid-template-columns:1fr;text-align:center;padding:0 24px}
+    .feature-quote .face{margin:0 auto}
+    .close{padding:80px 0}
+    .nav-links{display:none}
+    .wrap{padding:0 24px}
+  }
+</style>
+</head>
+<body>
+
+<div class="option-tag">Option 4 · Concierge <a href="index.html">back</a></div>
+
+<nav class="nav">
+  <div class="wrap inner">
+    <div class="wordmark">Well Spoken</div>
+    <div class="nav-links">
+      <a href="#">The Library</a>
+      <a href="#">Check In</a>
+      <a href="#">At Home</a>
+      <a href="#">Jill's Note</a>
+    </div>
+    <a href="#" class="nav-cta">Write to Jill</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="wrap grid">
+    <div class="portrait-frame">
+      <div class="tape"></div>
+      <img src="assets/jill.jpg" alt="Jill Benyamine, founder of Well Spoken">
+      <div class="cap">Jill, in her Ridgewood office</div>
+    </div>
+    <div class="letter">
+      <div class="greet">Hello, friend.</div>
+      <h1>If you have been <em>keeping a list</em> in your head about your kid, this is the place to bring it.</h1>
+      <p>I started Well Spoken because friends kept calling me, asking the same things, and I wanted somewhere real to send them. A quiet first door. One person who reads what you write and writes back with a real next step.</p>
+      <p>Not a form. Not a waitlist. Just a note from you, and a careful reading from me.</p>
+      <div class="sig">Jill</div>
+      <div class="credential">MA, CCC-SLP · Licensed in NJ and NY</div>
+      <div class="cta-row">
+        <a href="#" class="btn">Write me a note</a>
+        <span class="note">I reply within a business day, every time.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="about">
+  <div class="wrap grid">
+    <div class="tiles">
+      <div class="tile"><img src="https://images.pexels.com/photos/4050320/pexels-photo-4050320.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="A notebook and warm cup on a desk"></div>
+      <div class="tile"><img src="https://images.pexels.com/photos/3933039/pexels-photo-3933039.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="A child playing with wooden toys"></div>
+    </div>
+    <div>
+      <div class="eyebrow">What this place is</div>
+      <h2>Something small and <em>personal</em>, before the clinic or the long wait.</h2>
+      <p>Well Spoken is not a therapy practice yet, and it is not an app. It is a concierge reading and referral service. You write in. I read. I respond with what I would do if you were my friend asking me at a birthday party.</p>
+      <p>If a real evaluation is the next step, I hand you to someone I know and trust in Bergen County. If it is not, I tell you that too, and I give you a few careful things to try at home first.</p>
+    </div>
+  </div>
+</section>
+
+<section class="parents">
+  <div class="wrap">
+    <div class="head">
+      <div class="eyebrow">What parents send me</div>
+      <h2>The notes that come in, more or less word for word.</h2>
+    </div>
+    <div class="parents-grid">
+      <div class="note-card a">
+        <p class="text">"My three year old uses maybe ten words. My mother says wait. My gut says no. Help me make sense of it."</p>
+        <div class="from">Sent on a Tuesday, 9:14pm</div>
+      </div>
+      <div class="note-card b">
+        <p class="text">"Her preschool teacher said the word stuttering and I have been looking at every video I have of her ever since."</p>
+        <div class="from">From Ridgewood</div>
+      </div>
+      <div class="note-card c">
+        <p class="text">"He understands every word. He just does not talk yet. We are worried and also embarrassed to be worried."</p>
+        <div class="from">A dad, Glen Rock</div>
+      </div>
+      <div class="note-card d">
+        <p class="text">"We have tried everything except actually asking someone who knows. That is why I am writing."</p>
+        <div class="from">A mom, Montclair</div>
+      </div>
+      <div class="note-card e">
+        <p class="text">"My daughter only eats six things. I would love an SLP who also understands the feeding piece before we go to a big clinic."</p>
+        <div class="from">A mom, Tenafly</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="story">
+  <div class="wrap">
+    <div class="head">
+      <div class="eyebrow">What happens next</div>
+      <h2>From the moment you write, to the conversation on the other side.</h2>
+    </div>
+    <div class="story-grid">
+      <div class="story-panel">
+        <div class="circle"><img src="https://images.pexels.com/photos/4021808/pexels-photo-4021808.jpeg?auto=compress&cs=tinysrgb&w=800" alt="A hand writing in a journal"></div>
+        <div class="step-num">First</div>
+        <h3>You write the note</h3>
+        <p>A few sentences is plenty. Age, what you are seeing, how long it has been on your mind.</p>
+      </div>
+      <div class="story-panel">
+        <div class="circle"><img src="assets/jill.jpg" alt="Jill reading a note"></div>
+        <div class="step-num">Then</div>
+        <h3>Jill reads it personally</h3>
+        <p>Not a bot. Not an intake coordinator. Her, at her desk, with coffee, within a business day.</p>
+      </div>
+      <div class="story-panel">
+        <div class="circle"><img src="https://images.pexels.com/photos/7979782/pexels-photo-7979782.jpeg?auto=compress&cs=tinysrgb&w=800" alt="A warm moment between parent and child"></div>
+        <div class="step-num">And then</div>
+        <h3>A real first conversation</h3>
+        <p>A reading, a small thing to try at home, and, if it is time, a warm introduction to an SLP she trusts.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="local">
+  <div class="wrap grid">
+    <div>
+      <div class="eyebrow">Your neighborhood</div>
+      <h2>Bergen County is small, and the <em>right clinician</em> is usually eight minutes away.</h2>
+      <p>Jill grew up here, trained in New York, and built her network one coffee at a time. Pediatric SLPs, feeding specialists, and school-based clinicians she has personally worked alongside.</p>
+      <p>When a referral makes sense, it is a name, a short note of introduction, and a real human handoff. Not a search engine result.</p>
+      <div class="towns">
+        <span class="town">Ridgewood</span>
+        <span class="town">Glen Rock</span>
+        <span class="town">Montclair</span>
+        <span class="town">Tenafly</span>
+        <span class="town">Englewood</span>
+        <span class="town">Ho-Ho-Kus</span>
+        <span class="town">Wyckoff</span>
+        <span class="town">Upper Saddle River</span>
+      </div>
+    </div>
+    <div class="art">
+      <img src="https://images.pexels.com/photos/1128318/pexels-photo-1128318.jpeg?auto=compress&cs=tinysrgb&w=1400" alt="A tree-lined residential street">
+      <div class="tag">Around the corner</div>
+    </div>
+  </div>
+</section>
+
+<section class="feature-quote">
+  <div class="grid">
+    <div class="face"><img src="https://images.pexels.com/photos/1181519/pexels-photo-1181519.jpeg?auto=compress&cs=tinysrgb&w=600" alt="A mother from Bergen County"></div>
+    <div>
+      <div class="quote-mark">"</div>
+      <blockquote>I had been on two waitlists for nine months. Jill wrote back the next morning with a name, a reading, and a sentence that made me feel like a competent parent again. That is the whole thing.</blockquote>
+      <div class="attrib">Sarah K., mom of two, Ridgewood</div>
+    </div>
+  </div>
+</section>
+
+<section class="close">
+  <div class="wrap">
+    <div class="eyebrow">One more thing</div>
+    <h2>Tell me what you are noticing.</h2>
+    <p>A short note is the whole beginning. I read every single one myself, and I write back within a business day. Free for families, always.</p>
+    <div class="arrow-note">right here</div>
+    <a href="#" class="btn">Write to Jill</a>
+    <div class="fine">hello@bewellspoken.com · Bergen County, NJ</div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap inner">
+    <div>Well Spoken · A concierge practice for families.</div>
+    <div>© 2026 · Founded by Jill Benyamine, MA, CCC-SLP</div>
+  </div>
+</footer>
+
+</body>
+</html>

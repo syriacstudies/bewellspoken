@@ -1,0 +1,574 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="googlebot" content="noindex, nofollow">
+<script>(function(){try{if(sessionStorage.getItem("ws_gate_v1")!=="1"){window.location.replace("./");return;}}catch(e){window.location.replace("./");}})();</script>
+
+<title>Well Spoken — Editorial direction</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Inter:wght@400;500;600&family=Caveat:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#f4ede0; --paper-2:#ebe0c8; --paper-3:#e4d6b6;
+    --forest:#1e3328; --forest-ink:#14241c; --forest-soft:#3a4e42;
+    --green-accent:#4b6a52;
+    --cream-ink:#2a2a26; --muted:#766c5c;
+    --rule:rgba(30,51,40,.18);
+  }
+  *,*::before,*::after{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{
+    background:var(--paper);
+    color:var(--cream-ink);
+    font-family:"Inter",system-ui,sans-serif;
+    font-size:17px;
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  img{max-width:100%;display:block}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1240px;margin:0 auto;padding:0 36px}
+  .rule{height:1px;background:var(--rule);border:0;margin:0}
+
+  /* Masthead */
+  .masthead{
+    padding:28px 0 18px;
+    border-bottom:1px solid var(--rule);
+    display:grid;
+    grid-template-columns:1fr auto 1fr;
+    align-items:end;
+    gap:24px;
+  }
+  .masthead .meta{font-family:"Fraunces",serif;font-style:italic;font-weight:400;font-size:13px;color:var(--muted);letter-spacing:.02em}
+  .masthead .meta.right{text-align:right}
+  .wordmark{
+    font-family:"Fraunces",serif;
+    font-weight:500;
+    font-size:44px;
+    letter-spacing:-.02em;
+    text-align:center;
+    color:var(--forest-ink);
+  }
+  .wordmark em{font-style:italic;font-weight:400;color:var(--forest)}
+  .nav{
+    display:flex;gap:30px;justify-content:center;
+    padding:14px 0 18px;
+    font-size:13px;letter-spacing:.12em;text-transform:uppercase;
+    color:var(--forest-soft);
+    border-bottom:1px solid var(--rule);
+  }
+  .nav a{position:relative}
+  .nav a.active{color:var(--forest-ink)}
+  .nav a.active::after{content:"";position:absolute;left:0;right:0;bottom:-20px;height:2px;background:var(--forest)}
+
+  /* Hero — photo left, text right */
+  .hero{
+    padding:48px 0 64px;
+    display:grid;
+    grid-template-columns:1.35fr 1fr;
+    gap:56px;
+    align-items:stretch;
+  }
+  .hero .photo{
+    position:relative;
+    aspect-ratio:4/5;
+    overflow:hidden;
+    background:var(--paper-2);
+  }
+  .hero .photo img{width:100%;height:100%;object-fit:cover}
+  .hero .photo .caption{
+    position:absolute;left:18px;bottom:18px;
+    background:var(--forest);color:#f4ede0;
+    font-family:"Fraunces",serif;font-style:italic;font-size:13px;
+    padding:6px 12px;letter-spacing:.01em;
+  }
+  .hero .col{display:flex;flex-direction:column;justify-content:center}
+  .hero .kicker{
+    display:inline-block;
+    font-family:"Fraunces",serif;font-style:italic;font-weight:400;
+    font-size:15px;color:var(--forest);
+    letter-spacing:.01em;
+    border-bottom:1px solid var(--forest);
+    padding-bottom:8px;margin-bottom:26px;
+    align-self:flex-start;
+  }
+  .hero h1{
+    font-family:"Fraunces",serif;
+    font-weight:400;
+    font-size:clamp(2.4rem, 4.6vw, 4rem);
+    line-height:1.04;
+    letter-spacing:-.015em;
+    color:var(--forest-ink);
+    margin:0 0 22px;
+  }
+  .hero h1 em{font-style:italic;color:var(--forest)}
+  .hero .lede{
+    font-family:"Fraunces",serif;
+    font-size:19px;line-height:1.55;
+    color:var(--forest-soft);
+    margin:0 0 30px;
+    max-width:44ch;
+  }
+  .hero .cta{
+    display:inline-flex;align-items:center;gap:14px;
+    background:var(--forest);color:var(--paper);
+    font-family:"Inter",sans-serif;font-weight:500;font-size:14px;
+    letter-spacing:.08em;text-transform:uppercase;
+    padding:16px 28px;border-radius:999px;
+    align-self:flex-start;
+  }
+  .hero .cta span.arrow{
+    width:18px;height:1px;background:var(--paper);position:relative;
+  }
+  .hero .cta span.arrow::after{content:"";position:absolute;right:0;top:-3px;width:7px;height:7px;border-right:1px solid var(--paper);border-top:1px solid var(--paper);transform:rotate(45deg)}
+  .hero .sidebyline{
+    margin-top:36px;
+    padding-top:20px;
+    border-top:1px solid var(--rule);
+    font-family:"Fraunces",serif;font-style:italic;
+    color:var(--muted);font-size:14px;
+  }
+
+  /* Issue band */
+  .issue-band{
+    background:var(--forest);
+    color:var(--paper);
+    padding:18px 0;
+    font-family:"Fraunces",serif;font-style:italic;font-size:14px;
+    letter-spacing:.02em;
+  }
+  .issue-band .wrap{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
+  .issue-band .l{opacity:.85}
+  .issue-band .r{opacity:.65}
+
+  /* Feature story */
+  .feature{padding:80px 0 64px}
+  .feature .head{
+    display:grid;grid-template-columns:auto 1fr;gap:24px;align-items:baseline;
+    margin-bottom:38px;
+  }
+  .feature .section-tag{
+    font-family:"Fraunces",serif;font-style:italic;font-weight:400;font-size:18px;color:var(--forest);
+  }
+  .feature .section-rule{height:1px;background:var(--rule);margin-top:14px}
+  .feature .grid{
+    display:grid;grid-template-columns:1.1fr 1fr;gap:56px;align-items:center;
+  }
+  .feature .art{
+    aspect-ratio:5/4;
+    overflow:hidden;
+    background:var(--paper-2);
+  }
+  .feature .art img{width:100%;height:100%;object-fit:cover}
+  .feature h2{
+    font-family:"Fraunces",serif;font-weight:400;
+    font-size:clamp(2rem, 3.4vw, 3rem);line-height:1.08;letter-spacing:-.015em;
+    color:var(--forest-ink);margin:0 0 22px;
+  }
+  .feature h2 em{font-style:italic}
+  .feature .byline{
+    font-family:"Fraunces",serif;font-style:italic;font-size:14px;color:var(--muted);margin-bottom:22px;
+  }
+  .feature p{margin:0 0 14px;color:var(--forest-soft);font-size:17px;line-height:1.6}
+  .feature p.dropcap::first-letter{
+    font-family:"Fraunces",serif;font-weight:400;font-size:72px;line-height:.85;
+    float:left;margin:4px 10px 0 0;color:var(--forest);
+  }
+  .feature .continue{
+    margin-top:22px;
+    font-family:"Fraunces",serif;font-style:italic;font-size:15px;color:var(--forest);
+    border-bottom:1px solid var(--forest);padding-bottom:3px;
+    display:inline-block;
+  }
+
+  /* Noticing — editorial checklist in two columns with photo anchors */
+  .noticing{
+    background:var(--paper-2);
+    padding:80px 0;
+  }
+  .noticing .head{margin-bottom:38px;display:grid;grid-template-columns:auto 1fr;gap:24px;align-items:baseline}
+  .noticing h2{
+    font-family:"Fraunces",serif;font-weight:400;font-size:clamp(1.8rem,2.6vw,2.3rem);
+    color:var(--forest-ink);margin:0;
+  }
+  .noticing .note{font-family:"Fraunces",serif;font-style:italic;color:var(--muted);font-size:14px}
+  .noticing-grid{
+    display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px;
+  }
+  .notice-card{
+    background:var(--paper);padding:0;display:flex;flex-direction:column;
+    border:1px solid rgba(30,51,40,.08);
+  }
+  .notice-card .photo{
+    aspect-ratio:4/3;overflow:hidden;background:var(--paper-3);
+  }
+  .notice-card .photo img{width:100%;height:100%;object-fit:cover}
+  .notice-card .body{padding:22px 22px 26px}
+  .notice-card .age{
+    font-family:"Fraunces",serif;font-style:italic;font-size:13px;color:var(--forest);margin-bottom:6px;
+  }
+  .notice-card .concern{
+    font-family:"Fraunces",serif;font-weight:400;font-size:21px;line-height:1.25;color:var(--forest-ink);margin:0 0 14px;
+  }
+  .notice-card .read{
+    font-family:"Inter",sans-serif;font-size:13px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;
+  }
+  .notice-card .read span{border-bottom:1px solid var(--forest);padding-bottom:2px;color:var(--forest)}
+
+  /* Column — a note from Jill with portrait */
+  .column{padding:96px 0}
+  .column .grid{display:grid;grid-template-columns:1fr 1.2fr;gap:72px;align-items:center}
+  .column .portrait{
+    position:relative;width:100%;aspect-ratio:4/5;overflow:hidden;
+    background:var(--paper-2);
+  }
+  .column .portrait img{width:100%;height:100%;object-fit:cover;object-position:center 22%}
+  .column .portrait .tag{
+    position:absolute;top:22px;left:22px;background:var(--forest);color:var(--paper);
+    font-family:"Fraunces",serif;font-style:italic;font-size:13px;padding:6px 12px;
+  }
+  .column .eyebrow{font-family:"Fraunces",serif;font-style:italic;color:var(--forest);font-size:15px;margin-bottom:20px}
+  .column h2{
+    font-family:"Fraunces",serif;font-weight:400;
+    font-size:clamp(1.9rem,3vw,2.6rem);line-height:1.1;margin:0 0 20px;color:var(--forest-ink);
+  }
+  .column p{margin:0 0 16px;font-size:17px;line-height:1.65;color:var(--forest-soft)}
+  .column .sig{
+    margin-top:30px;font-family:"Caveat",cursive;font-size:30px;color:var(--forest);line-height:1;
+  }
+  .column .credential{
+    font-family:"Fraunces",serif;font-style:italic;font-size:13px;color:var(--muted);margin-top:4px;
+  }
+
+  /* Directory — the four stops, each as an editorial card with photo */
+  .directory{background:var(--forest);color:var(--paper);padding:80px 0}
+  .directory .head{margin-bottom:40px}
+  .directory .eyebrow{font-family:"Fraunces",serif;font-style:italic;color:rgba(244,237,224,.7);font-size:14px;margin-bottom:10px}
+  .directory h2{
+    font-family:"Fraunces",serif;font-weight:400;font-size:clamp(2rem,3vw,2.6rem);
+    margin:0 0 10px;color:var(--paper);
+  }
+  .directory .dek{font-family:"Fraunces",serif;font-style:italic;color:rgba(244,237,224,.75);max-width:52ch}
+  .directory-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:40px}
+  .dir-card{display:flex;flex-direction:column}
+  .dir-card .photo{aspect-ratio:3/4;overflow:hidden;background:rgba(244,237,224,.08)}
+  .dir-card .photo img{width:100%;height:100%;object-fit:cover;filter:saturate(.95)}
+  .dir-card .num{
+    font-family:"Fraunces",serif;font-style:italic;font-size:14px;color:rgba(244,237,224,.65);margin-top:16px;
+  }
+  .dir-card h3{
+    font-family:"Fraunces",serif;font-weight:400;font-size:22px;line-height:1.2;margin:6px 0 10px;color:var(--paper);
+  }
+  .dir-card p{font-size:14px;color:rgba(244,237,224,.75);line-height:1.55;margin:0}
+
+  /* Letters — testimonial */
+  .letters{padding:96px 0}
+  .letters .head{text-align:center;margin-bottom:50px}
+  .letters .eyebrow{font-family:"Fraunces",serif;font-style:italic;color:var(--forest);font-size:15px;margin-bottom:10px}
+  .letters h2{
+    font-family:"Fraunces",serif;font-weight:400;font-size:clamp(1.8rem,2.4vw,2.2rem);
+    margin:0 auto;max-width:24ch;line-height:1.15;color:var(--forest-ink);
+  }
+  .letters-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:40px}
+  .letter-card{
+    background:var(--paper-2);padding:36px 34px 30px;display:flex;gap:24px;align-items:flex-start;
+  }
+  .letter-card .thumb{
+    width:88px;height:88px;border-radius:50%;overflow:hidden;background:var(--paper-3);flex-shrink:0;
+  }
+  .letter-card .thumb img{width:100%;height:100%;object-fit:cover}
+  .letter-card blockquote{
+    margin:0;font-family:"Fraunces",serif;font-style:italic;font-size:19px;line-height:1.5;color:var(--forest-ink);
+  }
+  .letter-card .attrib{
+    margin-top:16px;font-family:"Inter",sans-serif;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);
+  }
+
+  /* Closing band */
+  .close{
+    background:var(--paper-3);
+    padding:96px 0;text-align:center;
+  }
+  .close h2{
+    font-family:"Fraunces",serif;font-weight:400;font-style:italic;
+    font-size:clamp(2.2rem,3.4vw,3rem);line-height:1.1;margin:0 0 20px;color:var(--forest-ink);
+    max-width:20ch;margin-inline:auto;
+  }
+  .close p{font-family:"Fraunces",serif;font-style:italic;color:var(--forest-soft);max-width:46ch;margin:0 auto 36px}
+  .close .cta{
+    display:inline-flex;align-items:center;gap:14px;
+    background:var(--forest);color:var(--paper);
+    font-family:"Inter",sans-serif;font-weight:500;font-size:14px;
+    letter-spacing:.08em;text-transform:uppercase;
+    padding:18px 34px;border-radius:999px;
+  }
+
+  /* Colophon */
+  .colophon{
+    padding:34px 0 48px;
+    font-family:"Fraunces",serif;font-style:italic;font-size:13px;color:var(--muted);
+    border-top:1px solid var(--rule);
+    display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;
+  }
+
+  .option-tag{
+    position:fixed;top:16px;right:16px;z-index:100;
+    background:var(--forest);color:var(--paper);
+    font-family:"Inter",sans-serif;font-size:11px;letter-spacing:.1em;text-transform:uppercase;
+    padding:8px 14px;border-radius:999px;
+    box-shadow:0 4px 16px rgba(20,30,24,.18);
+  }
+  .option-tag a{border-bottom:1px dotted rgba(244,237,224,.5);padding-bottom:1px;margin-left:10px}
+
+  @media (max-width:900px){
+    .hero{grid-template-columns:1fr;gap:32px;padding:32px 0 40px}
+    .hero .photo{aspect-ratio:5/4;max-height:420px}
+    .feature .grid{grid-template-columns:1fr;gap:28px}
+    .column .grid{grid-template-columns:1fr;gap:32px}
+    .column .portrait{max-width:320px;margin:0 auto}
+    .noticing-grid{grid-template-columns:1fr}
+    .directory-grid{grid-template-columns:1fr 1fr;gap:18px}
+    .letters-grid{grid-template-columns:1fr}
+    .wordmark{font-size:34px}
+    .wrap{padding:0 22px}
+    .nav{gap:18px;font-size:11px}
+  }
+</style>
+</head>
+<body>
+
+<div class="option-tag">Option 1 · Editorial <a href="index.html">back</a></div>
+
+<header>
+  <div class="wrap">
+    <div class="masthead">
+      <div class="meta">Bergen County · Volume I, No. 4</div>
+      <div class="wordmark"><em>Well</em> Spoken</div>
+      <div class="meta right">April 2026</div>
+    </div>
+    <nav class="nav">
+      <a href="#" class="active">Home</a>
+      <a href="#">The Library</a>
+      <a href="#">Check In</a>
+      <a href="#">At Home</a>
+      <a href="#">Talk To Us</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero wrap">
+  <div class="photo">
+    <img src="https://images.pexels.com/photos/8613098/pexels-photo-8613098.jpeg?auto=compress&cs=tinysrgb&w=1400" alt="A mother reading with her young daughter by a window">
+    <div class="caption">Photographed at home, Ridgewood NJ</div>
+  </div>
+  <div class="col">
+    <span class="kicker">This month's first feature</span>
+    <h1>The parents who noticed first, and what to do with <em>what you have been watching</em>.</h1>
+    <p class="lede">A quiet resource for Bergen County families, edited by a licensed speech-language pathologist, written for the parent who has been keeping notes.</p>
+    <a href="#" class="cta">Begin with a note<span class="arrow"></span></a>
+    <div class="sidebyline">Edited by Jill Benyamine, MA, CCC-SLP. Published monthly.</div>
+  </div>
+</section>
+
+<div class="issue-band">
+  <div class="wrap">
+    <span class="l">In this issue, the late talker, the dinner table, and eight small things you can do at home.</span>
+    <span class="r">Free for families. One reply within one business day.</span>
+  </div>
+</div>
+
+<section class="feature">
+  <div class="wrap">
+    <div class="head">
+      <div class="section-tag">The Feature</div>
+      <div class="section-rule"></div>
+    </div>
+    <div class="grid">
+      <div class="art">
+        <img src="https://images.pexels.com/photos/3662824/pexels-photo-3662824.jpeg?auto=compress&cs=tinysrgb&w=1400" alt="Child playing with wooden blocks on a living room floor">
+      </div>
+      <div>
+        <h2>When a quiet three year old is not really a <em>quiet</em> three year old.</h2>
+        <div class="byline">By Jill Benyamine, MA, CCC-SLP</div>
+        <p class="dropcap">You have been doing the counting at birthday parties. How many words she uses, roughly, compared to the girl across the kitchen. You have been watching her brother repeat himself three times and still not be understood at the door. You have mentioned it, once, to the pediatrician, and the answer was a version of "let us see in six months." Six months is a long time when you are the one watching.</p>
+        <p>Here is what I can tell you as the person who spends her days with children who are finding their words. Waiting is sometimes the right call, and sometimes it is the most expensive thing a family can do. The difference is almost never obvious from across a room. It takes a conversation and a set of notes, the kind you have been keeping already.</p>
+        <a href="#" class="continue">Continue reading this piece</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="noticing">
+  <div class="wrap">
+    <div class="head">
+      <h2>What you might be noticing.</h2>
+      <div class="note">Four scenarios drawn from the notes parents send us most often.</div>
+    </div>
+    <div class="noticing-grid">
+      <article class="notice-card">
+        <div class="photo">
+          <img src="https://images.pexels.com/photos/3933039/pexels-photo-3933039.jpeg?auto=compress&cs=tinysrgb&w=1000" alt="A child playing at a small table with wooden toys">
+        </div>
+        <div class="body">
+          <div class="age">Around age three</div>
+          <h3 class="concern">She only uses a handful of words, and has not really started combining them.</h3>
+          <div class="read"><span>Read: the late talker</span></div>
+        </div>
+      </article>
+      <article class="notice-card">
+        <div class="photo">
+          <img src="https://images.pexels.com/photos/4473398/pexels-photo-4473398.jpeg?auto=compress&cs=tinysrgb&w=1000" alt="A parent and child reading a picture book together">
+        </div>
+        <div class="body">
+          <div class="age">Around age four</div>
+          <h3 class="concern">He has plenty of words, but strangers, and sometimes teachers, are asking me to repeat him.</h3>
+          <div class="read"><span>Read: articulation clarity</span></div>
+        </div>
+      </article>
+      <article class="notice-card">
+        <div class="photo">
+          <img src="https://images.pexels.com/photos/7683850/pexels-photo-7683850.jpeg?auto=compress&cs=tinysrgb&w=1000" alt="A young child eating at a kitchen table">
+        </div>
+        <div class="body">
+          <div class="age">Any age</div>
+          <h3 class="concern">Mealtime is hard. He is a narrow eater, gags on textures, or eats only a short list of foods.</h3>
+          <div class="read"><span>Read: feeding and mealtime</span></div>
+        </div>
+      </article>
+      <article class="notice-card">
+        <div class="photo">
+          <img src="https://images.pexels.com/photos/3661264/pexels-photo-3661264.jpeg?auto=compress&cs=tinysrgb&w=1000" alt="Two children sitting side by side with a book">
+        </div>
+        <div class="body">
+          <div class="age">Kindergarten</div>
+          <h3 class="concern">Her teacher mentioned stuttering, and I am not sure whether to act or wait.</h3>
+          <div class="read"><span>Read: fluency in young children</span></div>
+        </div>
+      </article>
+      <article class="notice-card">
+        <div class="photo">
+          <img src="https://images.pexels.com/photos/8535616/pexels-photo-8535616.jpeg?auto=compress&cs=tinysrgb&w=1000" alt="A young child with blocks on a light wood floor">
+        </div>
+        <div class="body">
+          <div class="age">Toddler</div>
+          <h3 class="concern">He understands everything we say, but he is not putting words together yet.</h3>
+          <div class="read"><span>Read: receptive vs expressive</span></div>
+        </div>
+      </article>
+      <article class="notice-card">
+        <div class="photo">
+          <img src="https://images.pexels.com/photos/8535614/pexels-photo-8535614.jpeg?auto=compress&cs=tinysrgb&w=1000" alt="A child looking thoughtfully off to the side">
+        </div>
+        <div class="body">
+          <div class="age">Any age</div>
+          <h3 class="concern">We are not worried, we just want a conversation with someone who knows.</h3>
+          <div class="read"><span>Read: a first consultation</span></div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="column">
+  <div class="wrap">
+    <div class="grid">
+      <div class="portrait">
+        <img src="assets/jill.jpg" alt="Jill Benyamine, founder of Well Spoken">
+        <span class="tag">The Column</span>
+      </div>
+      <div>
+        <div class="eyebrow">A note from the editor</div>
+        <h2>You were right to look into this. Now let me help.</h2>
+        <p>I am Jill. I am a speech-language pathologist, I trained in New York, and for ten years I worked in schools and clinics in Bergen County watching the same thing happen. A parent notices something at two. The system hears about it at four. A lot of small conversations would have gone a long way, and they never happened, because nobody knew who to ask.</p>
+        <p>Well Spoken is that first conversation. You send me a short note. I read it, not a form algorithm, and I write back. If we should keep going, I personally match you to an evaluator in my network. If we should not, I tell you that too, and often that is the whole answer.</p>
+        <div class="sig">Jill</div>
+        <div class="credential">MA, CCC-SLP · Licensed in New Jersey and New York</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="directory">
+  <div class="wrap">
+    <div class="head">
+      <div class="eyebrow">The Directory</div>
+      <h2>Four places to begin, depending on where you are.</h2>
+      <div class="dek">The Library is the archive. The Check In is the quiz. At Home is for today. Milestones is the long view.</div>
+    </div>
+    <div class="directory-grid">
+      <a href="#" class="dir-card">
+        <div class="photo"><img src="https://images.pexels.com/photos/256455/pexels-photo-256455.jpeg?auto=compress&cs=tinysrgb&w=1000" alt="A stack of books on a wooden surface"></div>
+        <div class="num">01 · Read</div>
+        <h3>The Library</h3>
+        <p>Editorial articles on late talking, articulation, feeding, and fluency. Written for parents, not clinicians.</p>
+      </a>
+      <a href="#" class="dir-card">
+        <div class="photo"><img src="https://images.pexels.com/photos/4050320/pexels-photo-4050320.jpeg?auto=compress&cs=tinysrgb&w=1000" alt="A notebook and pen on a warm wooden desk"></div>
+        <div class="num">02 · Take</div>
+        <h3>The Check In</h3>
+        <p>A five minute online quiz that tells you what to read next and whether a conversation with us makes sense.</p>
+      </a>
+      <a href="#" class="dir-card">
+        <div class="photo"><img src="https://images.pexels.com/photos/3662665/pexels-photo-3662665.jpeg?auto=compress&cs=tinysrgb&w=1000" alt="A parent sitting on the floor with a child"></div>
+        <div class="num">03 · Try</div>
+        <h3>At Home</h3>
+        <p>Eight short exercises you can fold into a Tuesday. Narrating the kitchen, slowing your speech, naming the feeling.</p>
+      </a>
+      <a href="#" class="dir-card">
+        <div class="photo"><img src="https://images.pexels.com/photos/1128318/pexels-photo-1128318.jpeg?auto=compress&cs=tinysrgb&w=1000" alt="A young child walking on a garden path"></div>
+        <div class="num">04 · Track</div>
+        <h3>Milestones</h3>
+        <p>The honest version of the chart your pediatrician uses. Written in language you would use with a friend.</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="letters">
+  <div class="wrap">
+    <div class="head">
+      <div class="eyebrow">Letters</div>
+      <h2>From the parents who wrote in.</h2>
+    </div>
+    <div class="letters-grid">
+      <div class="letter-card">
+        <div class="thumb"><img src="https://images.pexels.com/photos/1181519/pexels-photo-1181519.jpeg?auto=compress&cs=tinysrgb&w=300" alt="A mother smiling gently at the camera"></div>
+        <div>
+          <blockquote>"I had been on two waitlists for nine months. Jill wrote back the next morning with the name of a clinician three towns over. That is it. That is what I needed."</blockquote>
+          <div class="attrib">A mother of two, Ridgewood</div>
+        </div>
+      </div>
+      <div class="letter-card">
+        <div class="thumb"><img src="https://images.pexels.com/photos/3812944/pexels-photo-3812944.jpeg?auto=compress&cs=tinysrgb&w=300" alt="A father sitting quietly at a kitchen table"></div>
+        <div>
+          <blockquote>"We did not end up needing therapy. Jill read what I wrote and said so plainly, and then she told me exactly what to watch for. I exhaled for the first time in months."</blockquote>
+          <div class="attrib">A father, Glen Rock</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="close">
+  <div class="wrap">
+    <h2>Tell us what you are noticing.</h2>
+    <p>A short note is the whole beginning. Jill reads every one herself, and she writes back within one business day.</p>
+    <a href="#" class="cta">Write to Jill<span class="arrow" style="width:18px;height:1px;background:var(--paper);position:relative;display:inline-block"></span></a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="colophon">
+      <div>Well Spoken · A concierge practice for Bergen County parents.</div>
+      <div>Edited by Jill Benyamine, MA, CCC-SLP · hello@bewellspoken.com</div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
