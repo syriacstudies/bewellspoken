@@ -13,5 +13,7 @@
 
 /options/*
   X-Robots-Tag: noindex, nofollow
+  X-Frame-Options: SAMEORIGIN
+  Content-Security-Policy: frame-ancestors 'self'
   Cache-Control: no-cache
 
