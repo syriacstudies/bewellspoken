@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Milestones by age · Well Spoken</title>
+<meta name="description" content="What most children do by each age, from first babbles to telling a story that lands. Signposts, not deadlines. Sourced from CDC, ASHA, and NIDCD guidance.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..600;1,9..144,400..500&family=Caveat:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/v3/assets/styles.css">
+<style>
+  .age-card h3{display:flex;align-items:baseline;gap:10px}
+  .age-card h3 .hand{font-size:1.15em}
+  .age-card ul{padding-left:20px;margin:0}
+  .age-card li{margin:9px 0}
+  .band-pane{animation:fade .35s ease}
+  @keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+  .checkin-list li{margin:10px 0}
+  .framing{font-size:1.12rem;color:#3c4a3f;max-width:62ch}
+</style>
+</head>
+<body>
+<div class="preview-bar"><strong>Private preview.</strong> Content pending clinical review. Not yet public.</div>
+
+<nav class="nav">
+  <a class="wordmark" href="/v3/">well spoken.</a>
+  <div class="nav-links">
+    <a href="/v3/milestones.html">Milestones</a>
+    <a href="/v3/check-in.html">Check-in</a>
+    <a href="/v3/library/">Library</a>
+    <a href="/v3/for-professionals.html">For professionals</a>
+    <a class="btn btn-ghost btn-small" href="/v3/talk.html">Talk to us</a>
+  </div>
+</nav>
+
+<main class="wrap section-tight">
+  <p class="kicker">Milestones by age</p>
+  <h1 style="font-size:clamp(2rem,4.6vw,3rem)">Signposts, <em>not deadlines.</em></h1>
+  <p class="lede">These are the things most children do by a given age, drawn from CDC, ASHA, and NIDCD guidance and reviewed by a licensed speech-language pathologist. The timeline varies more than parenting books sometimes suggest. Use these to get your bearings, not to grade your child.</p>
+
+  <div class="tabs" id="band-tabs" role="tablist"></div>
+  <div id="band-pane" class="band-pane"></div>
+
+  <div class="callout" style="margin-top:48px">
+    <p><strong>Seeing a few things on the "when to check in" list?</strong> The next step is calm and small: take the <a href="/v3/check-in.html">five minute check-in</a> and bring the summary to your pediatrician or a speech-language pathologist. None of these lists are diagnoses. They are reasons to have a conversation.</p>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="fcol">
+      <a class="wordmark" href="/v3/">well spoken.</a>
+      <p>Speech and language, explained gently. Free for families.</p>
+    </div>
+    <div class="fcol">
+      <a href="/v3/milestones.html">Milestones by age</a>
+      <a href="/v3/check-in.html">The check-in</a>
+      <a href="/v3/library/">The library</a>
+      <a href="/v3/for-professionals.html">For professionals</a>
+      <a href="/v3/talk.html">Talk to us</a>
+    </div>
+    <div class="fcol">
+      <p class="legal">Well Spoken is an educational resource. It does not provide medical advice, diagnosis, or treatment, and it is not a substitute for an evaluation by a qualified professional. Content is reviewed by a licensed speech-language pathologist. If you have concerns about your child's health or development, talk with your pediatrician.</p>
+      <p class="legal" style="margin-top:12px">© 2026 Well Spoken · Bergen County, NJ</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+var BANDS = [
+{
+  id:"b1", tab:"Birth to 2",
+  framing:"The first two years are the biggest leap in communication a person ever makes. Your baby goes from crying as their only message to using words and gestures to ask for things, point out what they notice, and connect with you. These are signposts, not deadlines.",
+  groups:[
+    {age:"By 6 months", items:["Startles to loud sounds and turns toward sound","Smiles at familiar people","Makes gurgling and cooing sounds","Uses their voice to express pleasure or displeasure"]},
+    {age:"By 12 months", items:["Looks at you when you call their name","Responds to their own name and simple requests like \"come here\"","Babbles with consonant and vowel sounds (\"bababa\", \"dada\")","Has one or two words, possibly including \"mama\" or \"dada\" with meaning","Uses gestures like waving, reaching, or shaking their head no","Enjoys games like peek-a-boo and patty-cake"]},
+    {age:"By 18 months", items:["Points to body parts when asked","Follows simple one-step directions","Says 10 to 20 words that are recognizable to family","Tries to imitate words they hear","Uses sounds and gestures together to communicate","Looks at a familiar object when you name it"]},
+    {age:"By 24 months", items:["Points to pictures in a book when named","Follows two-step directions (\"Get your shoe and bring it here\")","Says 50 or more words","Starts to combine two words (\"more milk\", \"big truck\")","Asks simple questions (\"what that?\")","Strangers understand about half of what they say"]}
+  ],
+  checkin:["No babbling by 9 months","No first words by 15 months","Fewer than 10 words by 18 months","Fewer than 50 words by 24 months","No two-word combinations by 24 months","Lost words or skills they used to have, at any age","Does not respond to their name consistently, even when hearing has been checked","No eye contact, smiling, or joint attention (looking at something you point to)"]
+},
+{
+  id:"b2", tab:"Ages 2 to 5",
+  framing:"These are the years when your child goes from a toddler with a handful of words to a talker with opinions, stories, and favorite jokes. A lot of the \"is something wrong\" worries come up in this age band, and a lot of the \"they figured it out\" stories happen here too.",
+  groups:[
+    {age:"By 3 years", items:["Follows two and three-step directions","Understands \"in\", \"on\", \"under\"","Says 250 to 500 words or more","Uses two and three-word sentences","Asks \"what\" and \"where\" questions","Strangers understand about 75 percent of speech","Names common objects in pictures","Uses words like \"I\", \"me\", \"mine\", and \"you\""]},
+    {age:"By 4 years", items:["Follows more complex directions","Understands concepts like same, different, biggest, smallest","Uses sentences of four or more words","Tells short stories and experiences","Speech is mostly clear to strangers, with some later sounds still developing","Asks lots of questions, including \"why\"","Uses pronouns mostly correctly","Plays well with other children and uses words to join in"]},
+    {age:"By 5 years", items:["Follows classroom-length directions","Understands most of what is said at home and in school","Uses long, detailed sentences with mostly correct grammar","Tells a story that has a beginning, middle, and end","Speech is clear and understandable to most listeners","Uses imagination and talks about things that are not present","Rhymes, sings songs, and begins to recognize letters"]}
+  ],
+  checkin:["By 3, cannot be understood by strangers at all","By 3, still using mostly single words or very short phrases","By 4, sentences are still very short or very simple","By 4, cannot follow a simple two-part direction","Losing words, skills, or interest in communication, at any age","Extreme frustration or meltdowns around communication","Stuttering that lasts more than six months or comes with visible struggle"]
+},
+{
+  id:"b3", tab:"Ages 5 to 8",
+  framing:"By kindergarten, most of the big speech and language milestones are behind you. What changes now is complexity: longer instructions, reading (which pulls heavily on language), stories that make sense, and the social world of peers. Issues that looked minor in preschool can become bigger now because the demands are bigger.",
+  groups:[
+    {age:"Typical at 5 to 6", items:["Understands long instructions with multiple parts","Uses complex sentences with \"because\", \"but\", \"if\"","Speech is clear on almost all sounds (r, s, th, l may still be developing)","Retells stories in order with most details","Uses language to negotiate, ask for help, and describe feelings","Begins to understand jokes and wordplay","Rhyming and early reading are emerging"]},
+    {age:"Typical at 6 to 7", items:["Understands almost everything said in casual conversation","Follows classroom directions with multiple steps","Sound production is clear with minor exceptions","Reads simple books with growing fluency","Tells a story that includes setting, characters, problem, and solution","Understands that words can have more than one meaning","Uses correct verb tenses most of the time"]},
+    {age:"Typical at 7 to 8", items:["Understands most non-literal language, like similes and basic idioms","Writes simple stories and explanations","Speech is clear on essentially all sounds","Asks questions to clarify when they do not understand","Gives verbal directions to others","Uses different speaking styles with friends versus adults","Summarizes what they read or watched"]}
+  ],
+  checkin:["Speech sound errors that used to be age-appropriate are still happening and no longer match peers","Trouble following classroom directions that peers manage","Storytelling, explaining, or describing is very difficult","Reading is slower or harder than expected (language is the foundation of reading)","Frustration with writing that might actually be a language issue underneath","Social communication is a clear struggle with peers, not just shyness","New stuttering or voice changes that persist more than a few weeks"]
+},
+{
+  id:"b4", tab:"Ages 8 to 12",
+  framing:"By upper elementary, speech and language issues tend to be subtler but more consequential. A kid who cannot express an idea in writing, retell a story, follow a joke, or read between the lines of a conversation may get missed because the issue is wrapped up in \"school stuff\" or \"personality.\" This age is about knowing what to watch for when the obvious signs have faded.",
+  groups:[
+    {age:"Typical at 8 to 10", items:["Understands and uses complex sentence structures","Reads with grade-appropriate fluency and comprehension","Writes paragraphs with a clear point and supporting details","Understands most figurative language, like similes and simple idioms","Takes turns in conversation and stays on topic","Handles peer conversations, including humor, teasing, and disagreement","Uses language to negotiate, explain, and persuade"]},
+    {age:"Typical at 10 to 12", items:["Understands multiple meanings and context-based language","Reads and understands grade-level academic text","Writes structured pieces with clear organization","Uses academic vocabulary in appropriate contexts","Adjusts speaking style for the audience: teacher, friend, parent, younger kid","Can summarize a long passage or story","Recognizes tone, sarcasm, and implied meaning"]}
+  ],
+  checkin:["Reading comprehension is significantly behind peers","Written expression is much weaker than what the child can say out loud","Trouble understanding word problems or figurative language","Difficulty with the social side of school: conversations, group work, reading the room","Stuttering that has persisted or returned","Voice changes that are not explained by puberty","Any noticeable change in communication from the child's own baseline"]
+}
+];
+
+var tabsEl = document.getElementById("band-tabs");
+var paneEl = document.getElementById("band-pane");
+
+function esc(s){ return s; } // content is authored, not user input
+
+function renderBand(band){
+  var html = '<p class="framing">' + band.framing + '</p>';
+  html += '<div class="card-grid cols-' + (band.groups.length >= 3 ? 3 : 2) + '" style="margin-top:30px">';
+  band.groups.forEach(function(g){
+    html += '<div class="card age-card"><h3><span class="hand">' + g.age + '</span></h3><ul>';
+    g.items.forEach(function(it){ html += '<li>' + esc(it) + '</li>'; });
+    html += '</ul></div>';
+  });
+  html += '</div>';
+  html += '<div class="callout" style="margin-top:34px"><p><strong>When to check in with a professional</strong></p><ul class="checkin-list" style="margin:12px 0 0;padding-left:20px">';
+  band.checkin.forEach(function(it){ html += '<li>' + esc(it) + '</li>'; });
+  html += '</ul><p style="margin-top:14px">These are not diagnoses. They are reasons to bring it up with your pediatrician or a speech-language pathologist.</p></div>';
+  paneEl.innerHTML = html;
+  paneEl.classList.remove("band-pane"); void paneEl.offsetWidth; paneEl.classList.add("band-pane");
+}
+
+BANDS.forEach(function(b, i){
+  var t = document.createElement("button");
+  t.className = "tab" + (i === 0 ? " active" : "");
+  t.textContent = b.tab;
+  t.setAttribute("role","tab");
+  t.addEventListener("click", function(){
+    document.querySelectorAll(".tab").forEach(function(x){ x.classList.remove("active"); });
+    t.classList.add("active");
+    renderBand(b);
+  });
+  tabsEl.appendChild(t);
+});
+renderBand(BANDS[0]);
+</script>
+<script src="/v3/assets/site.js"></script>
+</body>
+</html>

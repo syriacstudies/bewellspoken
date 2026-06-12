@@ -2,6 +2,10 @@
 # First match wins, so this must appear before the SPA catch-all.
 /options/*  /options/:splat  200
 
+# Serve the v3 launch preview from its real paths.
+/v3  /v3/index.html  200
+/v3/*  /v3/:splat  200
+
 # All other paths serve index.html (SPA with hash routing).
 # Not strictly necessary since hash routing doesn't change the path,
 # but good insurance if you ever switch to path-based routing.

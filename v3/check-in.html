@@ -1,0 +1,377 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>The Check-in · Well Spoken</title>
+<meta name="description" content="Eight questions about what you are noticing in your child's communication. Five minutes, no email, and a summary you can bring to your pediatrician.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..600;1,9..144,400..500&family=Caveat:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/v3/assets/styles.css">
+<style>
+  .stage{max-width:680px;margin:0 auto;padding:0 24px}
+  .qcard{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:40px 36px;margin-top:30px}
+  @media(max-width:600px){.qcard{padding:28px 22px}}
+  .qnum{font-family:var(--sans);font-size:.8rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--sage);margin-bottom:12px}
+  .qtext{font-size:clamp(1.25rem,2.6vw,1.55rem);line-height:1.4;margin:0 0 28px}
+  .choices{display:grid;gap:12px}
+  .band-grid{display:grid;gap:16px;margin-top:30px}
+  @media(min-width:640px){.band-grid{grid-template-columns:repeat(2,1fr)}}
+  .band-btn{text-align:center;padding:26px 18px}
+  .band-btn .age{font-family:var(--serif);font-size:1.6rem;display:block;margin-bottom:4px}
+  .band-btn small{font-family:var(--sans);color:var(--muted);font-weight:400}
+  .backlink{font-family:var(--sans);font-size:.88rem;color:var(--muted);background:none;border:none;cursor:pointer;padding:0;margin-top:22px;text-decoration:underline}
+  .result-badge{display:inline-block;font-family:var(--sans);font-size:.82rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;border-radius:999px;padding:7px 18px;margin-bottom:18px}
+  .badge-a{background:var(--sage-soft);color:var(--forest)}
+  .badge-b{background:var(--amber-soft);color:#7c5a1e}
+  .badge-c{background:#f0e0d6;color:#7c3a1e}
+  .result-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
+  .fade{animation:fade .35s ease}
+  @keyframes fade{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+  /* Print summary */
+  #print-summary{display:none}
+  @media print{
+    main{display:none}
+    #print-summary{display:block;font-family:Georgia,serif;color:#111;max-width:640px;margin:0 auto}
+    #print-summary h1{font-size:1.5rem}
+    #print-summary table{border-collapse:collapse;width:100%;margin:18px 0}
+    #print-summary td{border-bottom:1px solid #ccc;padding:8px 6px;vertical-align:top;font-size:.95rem}
+    #print-summary .small{font-size:.8rem;color:#444}
+  }
+</style>
+</head>
+<body>
+<div class="preview-bar"><strong>Private preview.</strong> Content pending clinical review. Not yet public.</div>
+
+<nav class="nav">
+  <a class="wordmark" href="/v3/">well spoken.</a>
+  <div class="nav-links">
+    <a href="/v3/milestones.html">Milestones</a>
+    <a href="/v3/check-in.html">Check-in</a>
+    <a href="/v3/library/">Library</a>
+    <a href="/v3/for-professionals.html">For professionals</a>
+    <a class="btn btn-ghost btn-small" href="/v3/talk.html">Talk to us</a>
+  </div>
+</nav>
+
+<main>
+<div class="stage section-tight" id="app">
+
+  <!-- Screen: intro -->
+  <div id="screen-intro">
+    <p class="kicker">The check-in</p>
+    <h1 style="font-size:clamp(2rem,4.6vw,3rem)">Eight questions about<br><em>what you are noticing.</em></h1>
+    <p class="lede">Five minutes, give or take. No email, no account. Your answers stay on this device and you can print or copy a summary at the end.</p>
+
+    <div class="callout" style="margin-top:34px">
+      <p><strong>Before you start, the honest fine print.</strong> This is not a clinical screening, assessment, or diagnosis. It is a structured way to organize what you are noticing about your child's communication, so you can have a clearer conversation with your pediatrician or a speech-language pathologist if you decide to. The goal is to help you feel prepared, not to give you a label.</p>
+    </div>
+
+    <h2 style="margin-top:40px">How old is your child?</h2>
+    <div class="band-grid" id="band-grid"></div>
+  </div>
+
+  <!-- Screen: question -->
+  <div id="screen-question" hidden>
+    <div class="progress-dots" id="dots"></div>
+    <div class="qcard fade" id="qcard">
+      <div class="qnum" id="qnum"></div>
+      <p class="qtext" id="qtext"></p>
+      <div class="choices">
+        <button class="choice-btn" data-val="yes">Yes</button>
+        <button class="choice-btn" data-val="notyet">Not yet</button>
+        <button class="choice-btn" data-val="notsure">Not sure</button>
+      </div>
+    </div>
+    <button class="backlink" id="back-btn">← Back</button>
+  </div>
+
+  <!-- Screen: result -->
+  <div id="screen-result" hidden>
+    <div class="qcard fade">
+      <span class="result-badge" id="result-badge"></span>
+      <h2 id="result-title" style="margin-top:0"></h2>
+      <div id="result-body"></div>
+      <div class="callout callout-sage" style="margin-top:26px">
+        <p id="result-disclaimer"></p>
+      </div>
+      <div class="result-actions no-print">
+        <button class="btn btn-solid" id="print-btn">Print the summary</button>
+        <button class="btn btn-ghost" id="copy-btn">Copy as text</button>
+      </div>
+      <div class="result-actions no-print">
+        <a class="btn btn-ghost btn-small" href="/v3/milestones.html">See the milestones</a>
+        <a class="btn btn-ghost btn-small" href="/v3/library/">Read the library</a>
+        <a class="btn btn-ghost btn-small" href="/v3/talk.html">Talk to us</a>
+      </div>
+    </div>
+    <button class="backlink" id="restart-btn">Start over</button>
+  </div>
+
+</div>
+</main>
+
+<!-- Printable summary -->
+<div id="print-summary"></div>
+
+<footer>
+  <div class="wrap">
+    <div class="fcol">
+      <a class="wordmark" href="/v3/">well spoken.</a>
+      <p>Speech and language, explained gently. Free for families.</p>
+    </div>
+    <div class="fcol">
+      <a href="/v3/milestones.html">Milestones by age</a>
+      <a href="/v3/check-in.html">The check-in</a>
+      <a href="/v3/library/">The library</a>
+      <a href="/v3/for-professionals.html">For professionals</a>
+      <a href="/v3/talk.html">Talk to us</a>
+    </div>
+    <div class="fcol">
+      <p class="legal">Well Spoken is an educational resource. It does not provide medical advice, diagnosis, or treatment, and it is not a substitute for an evaluation by a qualified professional. Content is reviewed by a licensed speech-language pathologist. If you have concerns about your child's health or development, talk with your pediatrician.</p>
+      <p class="legal" style="margin-top:12px">© 2026 Well Spoken · Bergen County, NJ</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+// ---------- Data ----------
+var WS = (function(){
+  var bands = [
+    {
+      id:"b1", label:"Birth to 2", sub:"infants and toddlers",
+      questions:[
+        "Does your child turn toward sound and respond when you say their name?",
+        "Does your child make a variety of sounds, like babbling, cooing, or consonant sounds such as \"baba\" or \"dada\"?",
+        "Does your child use gestures like pointing, waving, or reaching to show you things?",
+        "By 12 months, does your child have at least one or two words they use with meaning?",
+        "By 18 months, does your child have around 10 or more words that family members recognize?",
+        "Does your child follow simple directions like \"come here\" or \"get the ball\"?",
+        "Does your child enjoy back-and-forth play like peek-a-boo or rolling a ball?",
+        "Has your child ever lost words or communication skills they used to have?"
+      ],
+      flagIdx:[7] // Q8: yes = automatic C
+    },
+    {
+      id:"b2", label:"Ages 2 to 5", sub:"the preschool years",
+      questions:[
+        "By age 2, does your child use around 50 or more words that are recognizable?",
+        "By age 3, does your child put two or three words together, like \"want cookie\" or \"big truck go\"?",
+        "By age 3, can a stranger understand most of what your child says?",
+        "Can your child follow a two-step direction, like \"Get your shoes and bring them to me\"?",
+        "Does your child ask simple questions, like \"where ball?\" or \"what that?\"?",
+        "By age 4, does your child tell you about things that happened or things they want?",
+        "Does your child join in play with other children using words?",
+        "Has your child shown frustration, tantrums, or avoidance around communicating?"
+      ],
+      flagIdx:[7] // Q8: yes = weighted signal (bumps A to B)
+    },
+    {
+      id:"b3", label:"Ages 5 to 8", sub:"early elementary",
+      questions:[
+        "Is your child easy to understand when they talk, even for someone meeting them for the first time?",
+        "Can your child follow directions that have two or three parts, like at school?",
+        "Does your child tell stories that have a clear beginning, middle, and end?",
+        "Does your child ask questions to learn more, or to clarify when they do not understand?",
+        "Does your child join conversations with peers and stay on topic?",
+        "Is your child's reading progressing the way their teacher expects for their grade?",
+        "Does your child seem frustrated, tired, or shut down after school in a way that feels like the talking part of school is wearing them out?",
+        "Has your child's teacher mentioned concerns about speech, language, or communication?"
+      ],
+      flagIdx:[6,7], coreCount:6
+    },
+    {
+      id:"b4", label:"Ages 8 to 12", sub:"upper elementary and middle",
+      questions:[
+        "Does your child read at or near grade level, for both fluency and understanding?",
+        "Can your child retell a story, summarize a movie, or explain what happened at school in a way that makes sense?",
+        "Does your child participate in conversations with both peers and adults?",
+        "Does your child understand jokes, sarcasm, and figurative language most of the time?",
+        "Does your child express ideas in writing at a level that matches what they can say out loud?",
+        "Does your child have friends they can keep, with real back-and-forth relationships?",
+        "Has any teacher mentioned concerns about language, communication, writing, or social language?",
+        "Has your child's speech changed recently in a way you cannot explain, like new stuttering, hoarseness, or unusual patterns?"
+      ],
+      flagIdx:[6,7], coreCount:6
+    }
+  ];
+
+  // Returns "A" | "B" | "C" plus an optional special note.
+  function score(bandId, answers){
+    var band = bands.find(function(b){ return b.id === bandId; });
+    var flags = band.flagIdx || [];
+    var coreCount = band.coreCount || (8 - flags.length);
+    var yesCore = 0;
+    for (var i = 0; i < coreCount; i++){ if (answers[i] === "yes") yesCore++; }
+    var flagged = flags.some(function(i){ return answers[i] === "yes"; });
+
+    if (bandId === "b1"){
+      if (answers[7] === "yes") return {tier:"C", special:"lost-skills"};
+      if (yesCore >= 6) return {tier:"A"};
+      if (yesCore >= 4) return {tier:"B"};
+      return {tier:"C"};
+    }
+    if (bandId === "b2"){
+      var t = yesCore >= 6 ? "A" : yesCore >= 4 ? "B" : "C";
+      if (t === "A" && answers[7] === "yes") t = "B";
+      return {tier:t, special: answers[7] === "yes" ? "frustration" : null};
+    }
+    // b3, b4: 5-6 yes and no flags = A; 0-2 = C; otherwise B
+    if (yesCore <= 2) return {tier:"C"};
+    if (yesCore >= 5 && !flagged) return {tier:"A"};
+    return {tier:"B"};
+  }
+
+  return {bands:bands, score:score};
+})();
+
+// ---------- Result copy ----------
+var RESULTS = {
+  A: {
+    badge:"Within the typical range", cls:"badge-a",
+    title:"Based on what you told us, your child is showing skills within the typical range for this age.",
+    body:"<p>This is a snapshot of what you reported today, not a diagnosis. Children develop on different timelines, and there is a wide range of typical. Keep watching, and come back any time something changes.</p><p>And one thing we mean sincerely: if your gut keeps telling you something is off, trust it. A conversation with a speech-language pathologist is never a wasted hour, even when the answer is reassurance.</p>"
+  },
+  B: {
+    badge:"Worth a conversation", cls:"badge-b",
+    title:"Your answers include some things worth bringing up with a professional.",
+    body:"<p>This is not a diagnosis. It is a reason to have a conversation with your pediatrician or a speech-language pathologist, someone who can take a closer look.</p><p>Some of what you flagged may turn out to be typical variation. Some may benefit from support. A conversation is the only way to find out, and a good clinician will tell you honestly both when something is a concern and when it is not.</p>"
+  },
+  C: {
+    badge:"We recommend reaching out", cls:"badge-c",
+    title:"We recommend talking with a speech-language pathologist or your pediatrician.",
+    body:"<p>Your answers include several things a speech-language pathologist would want to look at more closely. This is not a diagnosis, and what you are noticing can have many different causes. What we can say is that talking with a professional is the right next step, and sooner is generally better than later.</p><p>Your pediatrician is a good first call, especially if there is anything medical going on or hearing has not been checked recently. Many SLPs also offer brief consultations that make starting the conversation easy.</p>"
+  }
+};
+var SPECIALS = {
+  "lost-skills":"<p><strong>One answer matters on its own here.</strong> You told us your child has lost words or skills they used to have. Whatever else is going on, that single observation is worth a prompt conversation with your pediatrician. Not because the explanation is necessarily serious, but because it is the one sign professionals never want families to sit on.</p>",
+  "frustration":"<p><strong>About the frustration you mentioned:</strong> when a child is regularly frustrated or melting down around communicating, that experience is its own valid reason to talk with someone, regardless of how the other answers add up.</p>"
+};
+var DISCLAIMER = "This is not a diagnosis. Only a qualified professional can evaluate and diagnose a speech or language concern. Your pediatrician is always a good first call, especially if hearing has not been checked or anything else is going on medically.";
+var ANSWER_LABELS = {yes:"Yes", notyet:"Not yet", notsure:"Not sure"};
+
+// ---------- App state ----------
+var state = {band:null, idx:0, answers:[]};
+
+var $ = function(id){ return document.getElementById(id); };
+
+function show(screen){
+  ["screen-intro","screen-question","screen-result"].forEach(function(s){ $(s).hidden = (s !== screen); });
+  window.scrollTo({top:0, behavior:"smooth"});
+}
+
+// Band picker
+(function(){
+  var grid = $("band-grid");
+  WS.bands.forEach(function(b){
+    var btn = document.createElement("button");
+    btn.className = "choice-btn band-btn";
+    btn.innerHTML = '<span class="age">' + b.label + '</span><small>' + b.sub + '</small>';
+    btn.addEventListener("click", function(){
+      state.band = b; state.idx = 0; state.answers = [];
+      renderQuestion(); show("screen-question");
+    });
+    grid.appendChild(btn);
+  });
+})();
+
+function renderQuestion(){
+  var b = state.band, i = state.idx;
+  $("qnum").textContent = "Question " + (i + 1) + " of " + b.questions.length;
+  $("qtext").textContent = b.questions[i];
+  var dots = $("dots"); dots.innerHTML = "";
+  b.questions.forEach(function(_, j){
+    var s = document.createElement("span");
+    if (j < i) s.className = "done"; else if (j === i) s.className = "now";
+    dots.appendChild(s);
+  });
+  document.querySelectorAll("#qcard .choice-btn").forEach(function(btn){
+    btn.classList.toggle("selected", state.answers[i] === btn.dataset.val);
+  });
+  var card = $("qcard");
+  card.classList.remove("fade"); void card.offsetWidth; card.classList.add("fade");
+}
+
+document.querySelectorAll("#qcard .choice-btn").forEach(function(btn){
+  btn.addEventListener("click", function(){
+    state.answers[state.idx] = btn.dataset.val;
+    if (state.idx < state.band.questions.length - 1){
+      state.idx++; renderQuestion();
+    } else {
+      renderResult(); show("screen-result");
+    }
+  });
+});
+
+$("back-btn").addEventListener("click", function(){
+  if (state.idx > 0){ state.idx--; renderQuestion(); }
+  else show("screen-intro");
+});
+$("restart-btn").addEventListener("click", function(){
+  state = {band:null, idx:0, answers:[]};
+  show("screen-intro");
+});
+
+function renderResult(){
+  var r = WS.score(state.band.id, state.answers);
+  var copy = RESULTS[r.tier];
+  var badge = $("result-badge");
+  badge.textContent = copy.badge;
+  badge.className = "result-badge " + copy.cls;
+  $("result-title").textContent = copy.title;
+  $("result-body").innerHTML = (r.special && SPECIALS[r.special] ? SPECIALS[r.special] : "") + copy.body;
+  $("result-disclaimer").textContent = DISCLAIMER;
+  buildSummary(r);
+}
+
+function summaryText(r){
+  var d = new Date();
+  var lines = [];
+  lines.push("WELL SPOKEN CHECK-IN SUMMARY");
+  lines.push("Date: " + d.toLocaleDateString());
+  lines.push("Age band: " + state.band.label + " (" + state.band.sub + ")");
+  lines.push("");
+  state.band.questions.forEach(function(q, i){
+    lines.push((i + 1) + ". " + q);
+    lines.push("   Answer: " + (ANSWER_LABELS[state.answers[i]] || "—"));
+  });
+  lines.push("");
+  lines.push("Result: " + RESULTS[r.tier].badge);
+  lines.push("");
+  lines.push("Note for the professional reading this: these answers come from a");
+  lines.push("parent questionnaire on bewellspoken.com. It is a non-diagnostic way");
+  lines.push("for families to organize their observations before a conversation");
+  lines.push("with you. It is not a screening instrument.");
+  return lines.join("\n");
+}
+
+function buildSummary(r){
+  var d = new Date();
+  var rows = state.band.questions.map(function(q, i){
+    return "<tr><td>" + (i + 1) + ". " + q + "</td><td><strong>" + (ANSWER_LABELS[state.answers[i]] || "") + "</strong></td></tr>";
+  }).join("");
+  $("print-summary").innerHTML =
+    "<h1>Well Spoken check-in summary</h1>" +
+    "<p class='small'>" + d.toLocaleDateString() + " · Age band: " + state.band.label + " (" + state.band.sub + ")</p>" +
+    "<table>" + rows + "</table>" +
+    "<p><strong>Result: " + RESULTS[r.tier].badge + "</strong></p>" +
+    "<p class='small'>For the professional reading this: these answers come from a parent questionnaire on bewellspoken.com. It is a non-diagnostic way for families to organize their observations before a conversation with you. It is not a screening instrument.</p>" +
+    "<p class='small'>" + DISCLAIMER + "</p>";
+  window._summaryText = summaryText(r);
+}
+
+$("print-btn").addEventListener("click", function(){ window.print(); });
+$("copy-btn").addEventListener("click", function(){
+  if (navigator.clipboard && window._summaryText){
+    navigator.clipboard.writeText(window._summaryText).then(function(){
+      $("copy-btn").textContent = "Copied";
+      setTimeout(function(){ $("copy-btn").textContent = "Copy as text"; }, 1800);
+    });
+  }
+});
+</script>
+<script src="/v3/assets/site.js"></script>
+</body>
+</html>

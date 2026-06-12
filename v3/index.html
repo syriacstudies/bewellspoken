@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Well Spoken · Speech and language, explained gently</title>
+<meta name="description" content="A free resource for parents wondering about their child's speech and language. Milestones, a five minute check-in, and a library reviewed by a licensed speech-language pathologist.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..600;1,9..144,400..500&family=Caveat:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/v3/assets/styles.css">
+<style>
+  /* Hero */
+  .hero{position:relative;padding:64px 0 80px;overflow:hidden}
+  .hero-grid{display:grid;gap:40px;align-items:center}
+  @media(min-width:880px){.hero-grid{grid-template-columns:1.15fr .85fr}}
+  .hero h1 em{font-style:italic;color:var(--forest)}
+  .hero-ctas{display:flex;gap:14px;flex-wrap:wrap;margin-top:30px}
+  .hero-fineprint{font-family:var(--sans);font-size:.84rem;color:var(--muted);margin-top:22px}
+
+  /* Animated sound bloom */
+  .bloom-wrap{position:relative;display:flex;justify-content:center}
+  .bloom{width:min(380px,80vw);height:auto}
+  .bloom .arc{fill:none;stroke:var(--sage);stroke-linecap:round;transform-origin:70px 150px;opacity:0}
+  .bloom .seed{fill:var(--forest)}
+  .bloom .word{font-family:var(--hand);font-size:21px;fill:var(--forest);opacity:0}
+  @keyframes arcIn{0%{opacity:0;transform:scale(.6)}30%{opacity:.7}100%{opacity:.7;transform:scale(1)}}
+  @keyframes wordIn{to{opacity:1}}
+  .bloom .a1{animation:arcIn 1.2s .2s ease-out forwards}
+  .bloom .a2{animation:arcIn 1.2s .5s ease-out forwards}
+  .bloom .a3{animation:arcIn 1.2s .8s ease-out forwards}
+  .bloom .a4{animation:arcIn 1.2s 1.1s ease-out forwards}
+  .bloom .w1{animation:wordIn .9s 1.5s ease forwards}
+  .bloom .w2{animation:wordIn .9s 1.9s ease forwards}
+  .bloom .w3{animation:wordIn .9s 2.3s ease forwards}
+  .bloom .w4{animation:wordIn .9s 2.7s ease forwards}
+  @media(prefers-reduced-motion:reduce){.bloom .arc,.bloom .word{opacity:1;animation:none}}
+  .bloom-caption{
+    position:absolute;bottom:-6px;right:8%;font-family:var(--hand);
+    font-size:1.35rem;color:var(--sage);transform:rotate(-3deg);
+  }
+
+  /* Steps */
+  .steps{counter-reset:step;display:grid;gap:26px}
+  @media(min-width:760px){.steps{grid-template-columns:repeat(3,1fr)}}
+  .step{position:relative;padding-top:8px}
+  .step::before{
+    counter-increment:step;content:counter(step);
+    font-family:var(--serif);font-style:italic;font-size:3rem;color:var(--amber);
+    display:block;line-height:1;margin-bottom:10px;
+  }
+
+  /* Reviewed-by */
+  .clinician{display:grid;gap:34px;align-items:center}
+  @media(min-width:820px){.clinician{grid-template-columns:300px 1fr}}
+  .clinician img{border-radius:var(--radius);box-shadow:var(--shadow)}
+</style>
+</head>
+<body>
+<div class="preview-bar"><strong>Private preview.</strong> Content pending clinical review. Not yet public.</div>
+
+<nav class="nav">
+  <a class="wordmark" href="/v3/">well spoken.</a>
+  <div class="nav-links">
+    <a href="/v3/milestones.html">Milestones</a>
+    <a href="/v3/check-in.html">Check-in</a>
+    <a href="/v3/library/">Library</a>
+    <a href="/v3/for-professionals.html">For professionals</a>
+    <a class="btn btn-ghost btn-small" href="/v3/talk.html">Talk to us</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="kicker">Speech and language, explained gently</p>
+      <h1>You noticed something.<br><em>Start here.</em></h1>
+      <p class="lede">Maybe it was a teacher's comment, a quiet comparison at a birthday party, or a feeling you cannot quite name. Well Spoken is a free place to make sense of what you are seeing, built and reviewed by a licensed speech-language pathologist.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-solid" href="/v3/check-in.html">Take the five minute check-in</a>
+        <a class="btn btn-ghost" href="/v3/milestones.html">See the milestones</a>
+      </div>
+      <p class="hero-fineprint">Free for families. No account, no email required. We do not diagnose. We help you figure out the right next step.</p>
+    </div>
+    <div class="bloom-wrap" aria-hidden="true">
+      <svg class="bloom" viewBox="0 0 380 300" xmlns="http://www.w3.org/2000/svg">
+        <circle class="seed" cx="70" cy="150" r="7"/>
+        <path class="arc a1" d="M95 122 A 38 38 0 0 1 95 178" stroke-width="2.4"/>
+        <path class="arc a2" d="M122 96 A 76 76 0 0 1 122 204" stroke-width="2.1"/>
+        <path class="arc a3" d="M150 70 A 114 114 0 0 1 150 230" stroke-width="1.8"/>
+        <path class="arc a4" d="M178 44 A 152 152 0 0 1 178 256" stroke-width="1.5"/>
+        <text class="word w1" x="216" y="84">mama</text>
+        <text class="word w2" x="248" y="136">more milk</text>
+        <text class="word w3" x="240" y="188">why?</text>
+        <text class="word w4" x="212" y="240">once upon a time…</text>
+      </svg>
+      <span class="bloom-caption">every voice starts small</span>
+    </div>
+  </div>
+</header>
+
+<svg class="wave" viewBox="0 0 1200 34" preserveAspectRatio="none" aria-hidden="true">
+  <path d="M0 17 Q 75 0 150 17 T 300 17 T 450 17 T 600 17 T 750 17 T 900 17 T 1050 17 T 1200 17" fill="none" stroke="currentColor" stroke-width="1.5"/>
+</svg>
+
+<main>
+
+<section class="section">
+  <div class="wrap">
+    <p class="kicker reveal">Three ways in</p>
+    <h2 class="reveal">Start wherever you are</h2>
+    <p class="measure reveal">Some parents want facts first. Some want to organize what they are noticing. Some just want to read for a while. All three doors lead somewhere useful.</p>
+    <div class="card-grid cols-3" style="margin-top:38px">
+      <a class="door reveal" href="/v3/milestones.html">
+        <svg class="ripple glyph" viewBox="0 0 54 54" aria-hidden="true"><circle class="dot" cx="14" cy="27" r="4"/><circle cx="27" cy="27" r="13"/><circle class="r2" cx="27" cy="27" r="19"/><circle class="r3" cx="27" cy="27" r="25"/></svg>
+        <h3>Look up the milestones</h3>
+        <p>What most children do by each age, from first babbles to telling a story that lands. Signposts, not deadlines.</p>
+        <span class="door-go">Explore by age →</span>
+      </a>
+      <a class="door reveal" href="/v3/check-in.html">
+        <svg class="ripple glyph" viewBox="0 0 54 54" aria-hidden="true"><circle class="dot" cx="27" cy="14" r="4"/><circle cx="27" cy="27" r="13"/><circle class="r2" cx="27" cy="27" r="19"/><circle class="r3" cx="27" cy="27" r="25"/></svg>
+        <h3>Take the check-in</h3>
+        <p>Eight questions about what you are seeing at home. You leave with a clear read and a one page summary you can bring to your pediatrician.</p>
+        <span class="door-go">Five minutes, no email →</span>
+      </a>
+      <a class="door reveal" href="/v3/library/">
+        <svg class="ripple glyph" viewBox="0 0 54 54" aria-hidden="true"><circle class="dot" cx="40" cy="27" r="4"/><circle cx="27" cy="27" r="13"/><circle class="r2" cx="27" cy="27" r="19"/><circle class="r3" cx="27" cy="27" r="25"/></svg>
+        <h3>Read the library</h3>
+        <p>Plain answers to the questions parents actually search at midnight. What an evaluation includes, what reports mean, when to act.</p>
+        <span class="door-go">Browse the articles →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="section-tight">
+  <div class="wrap">
+    <p class="kicker reveal">You are not the only one</p>
+    <h2 class="reveal">Every family arrives with a version of one of these</h2>
+    <div class="notes" style="margin-top:30px">
+      <div class="note reveal"><p>My three year old uses maybe ten words. My mother says wait. My gut says no. Help me make sense of it.</p><span class="from">The 9pm worry</span></div>
+      <div class="note reveal"><p>Her preschool teacher said the word stuttering and I have been replaying every video of her ever since.</p><span class="from">The teacher comment</span></div>
+      <div class="note reveal"><p>He understands every word we say. He just does not talk yet. We are worried, and also a little embarrassed to be worried.</p><span class="from">The quiet one</span></div>
+      <div class="note reveal"><p>We have tried everything except actually asking someone who knows.</p><span class="from">The reason this site exists</span></div>
+    </div>
+    <p class="measure reveal" style="margin-top:26px">If one of these sounds like a thought you have had, you are in the right place. None of them are silly, and none of them are automatically a problem. They are reasons to look a little closer, calmly.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="quoteband center reveal">
+      <p class="hand" style="font-size:clamp(1.7rem,3.6vw,2.5rem);margin:0 0 14px">“Wait and see” is not the only option.<br>Panic is not the only alternative.</p>
+      <p class="measure-c">There is a middle path: learn what is typical, organize what you are noticing, and have one good conversation with a professional. This site exists to walk you down that path.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-tight">
+  <div class="wrap">
+    <p class="kicker reveal">How families use this place</p>
+    <h2 class="reveal">A calm path from worry to clarity</h2>
+    <div class="steps" style="margin-top:34px">
+      <div class="step reveal">
+        <h3>Get your bearings</h3>
+        <p>Look up your child's age on the <a href="/v3/milestones.html">milestones page</a>. Most parents find at least one thing that reassures them and one thing worth watching.</p>
+      </div>
+      <div class="step reveal">
+        <h3>Organize what you see</h3>
+        <p>Take the <a href="/v3/check-in.html">check-in</a>. It turns a fog of 2am worries into a clear, printable summary of what you are noticing and how long you have noticed it.</p>
+      </div>
+      <div class="step reveal">
+        <h3>Have one good conversation</h3>
+        <p>Bring the summary to your pediatrician or a speech-language pathologist. A short conversation with the right person beats months of wondering.</p>
+      </div>
+    </div>
+    <div class="callout callout-sage reveal" style="margin-top:40px">
+      <p>Your pediatrician stays in the loop here, always. For some concerns, like hearing or feeding or anything medical, the pediatrician is the right first call. Nothing on this site replaces that relationship.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap clinician">
+    <img class="reveal" src="/v3/assets/jill.jpg" alt="The speech-language pathologist who reviews Well Spoken's content" width="300">
+    <div>
+      <p class="kicker reveal">Who is behind this</p>
+      <h2 class="reveal">Reviewed by a real clinician, not scraped from the internet</h2>
+      <p class="measure reveal">Well Spoken is a small family project, run with a licensed, ASHA-certified speech-language pathologist in Bergen County, New Jersey. She has spent her career doing evaluations and therapy with children, in schools and in clinics, and answering exactly these questions for friends at exactly those birthday parties.</p>
+      <p class="measure reveal">Every milestone, every check-in question, and every article on this site passes through her review before it is published. When something is debated among clinicians, we say so. When the honest answer is "talk to a professional," we say that too.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-tight">
+  <div class="wrap">
+    <div class="card reveal" style="display:flex;flex-wrap:wrap;gap:24px;align-items:center;justify-content:space-between">
+      <div style="max-width:560px">
+        <h3>Pediatricians, teachers, and directors</h3>
+        <p style="margin-bottom:0">If a family asks you "is this something?", this site is a calm place to send them. There is a page that explains how to use it in your setting.</p>
+      </div>
+      <a class="btn btn-ghost" href="/v3/for-professionals.html">For professionals →</a>
+    </div>
+  </div>
+</section>
+
+<section class="section center">
+  <div class="wrap">
+    <h2 class="reveal">Have a question this site does not answer?</h2>
+    <p class="measure-c reveal">Write to us. Short notes are welcome. Tell us your child's age, what you are noticing, and how long it has been on your mind. We read everything, and we will point you somewhere useful.</p>
+    <p class="reveal" style="margin-top:26px"><a class="btn btn-solid" href="/v3/talk.html">Talk to us</a></p>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="fcol">
+      <a class="wordmark" href="/v3/">well spoken.</a>
+      <p>Speech and language, explained gently. Free for families.</p>
+    </div>
+    <div class="fcol">
+      <a href="/v3/milestones.html">Milestones by age</a>
+      <a href="/v3/check-in.html">The check-in</a>
+      <a href="/v3/library/">The library</a>
+      <a href="/v3/for-professionals.html">For professionals</a>
+      <a href="/v3/talk.html">Talk to us</a>
+    </div>
+    <div class="fcol">
+      <p class="legal">Well Spoken is an educational resource. It does not provide medical advice, diagnosis, or treatment, and it is not a substitute for an evaluation by a qualified professional. Content is reviewed by a licensed speech-language pathologist. If you have concerns about your child's health or development, talk with your pediatrician.</p>
+      <p class="legal" style="margin-top:12px">© 2026 Well Spoken · Bergen County, NJ</p>
+    </div>
+  </div>
+</footer>
+
+<script src="/v3/assets/site.js"></script>
+</body>
+</html>
