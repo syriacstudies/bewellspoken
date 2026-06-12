@@ -269,3 +269,9 @@ body::after{
 .mini{width:44px;height:44px}
 .quiet-link{font-family:var(--sans);font-size:.92rem;font-weight:600;color:var(--sage);text-decoration:none}
 .quiet-link:hover{color:var(--forest);text-decoration:underline}
+
+/* ---- Editorial photography ---- */
+.photo-head{width:100%;aspect-ratio:21/9;object-fit:cover;border-radius:18px;box-shadow:var(--shadow);margin:8px 0 34px}
+.hub-hero{width:100%;aspect-ratio:21/8;object-fit:cover;border-radius:22px;box-shadow:var(--shadow);margin:38px 0 6px}
+.page-photo{width:100%;max-width:580px;aspect-ratio:16/9;object-fit:cover;border-radius:18px;box-shadow:var(--shadow);margin:8px 0 30px}
+@media(max-width:600px){.photo-head{aspect-ratio:16/10}.hub-hero{aspect-ratio:16/10}}

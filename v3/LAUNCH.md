@@ -26,6 +26,10 @@ Or locally: `python3 -m http.server` from the repo root, then open localhost:800
 4. To go live: move v3 contents to the repo root (replacing the splash), update the absolute `/v3/` paths to `/`, remove the noindex meta tags and the preview bar, and retire the old SPA catch-all in `_redirects`. Happy to do this in a session when you say go.
 5. Optional next: per-article SEO metadata and social cards, a sitemap, and analytics. None block the preview.
 
+## Photography
+
+The article headers, library hero, and professionals page use photos served from Unsplash's CDN (images.unsplash.com). The Unsplash license is free for commercial use with no attribution required, and hotlinking their CDN is how their service is designed to be used. If you ever want full control, download the same images and drop them in `v3/assets/`, then swap the URLs. Swapping any photo is a one line change; just tell Claude which page and what mood.
+
 ## What was deliberately left out
 
 - Any promise that a specific person reads or replies on a clock.
