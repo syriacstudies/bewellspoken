@@ -2,7 +2,7 @@
 // Provides offline caching so the app works without a connection.
 // Strategy: cache-first for static assets, network-first for navigation.
 
-const CACHE_NAME = "wellspoken-v2";
+const CACHE_NAME = "wellspoken-v3";
 const PRECACHE = [
   "/",
   "/index.html",
@@ -36,6 +36,12 @@ self.addEventListener("fetch", event => {
 
   // Skip non-GET and cross-origin requests
   if (request.method !== "GET" || !request.url.startsWith(self.location.origin)) {
+    return;
+  }
+
+  // Never intercept the v3 preview — always straight to the network,
+  // so John and Jill always see the latest deploy with fresh CSS.
+  if (new URL(request.url).pathname.startsWith("/v3/")) {
     return;
   }
 

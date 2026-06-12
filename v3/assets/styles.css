@@ -59,7 +59,7 @@ a:hover{color:var(--forest)}
   text-decoration:none;border-bottom:2px solid transparent;padding-bottom:2px;
 }
 .nav-links a:hover,.nav-links a[aria-current="page"]{border-bottom-color:var(--sage)}
-.nav-links a.btn{border-bottom:none}
+.nav-links a.btn{border:1.5px solid var(--forest);padding-bottom:9px}
 
 /* Buttons */
 .btn{
@@ -260,9 +260,12 @@ body::after{
 }
 .quoteband{position:relative;overflow:hidden}
 .qstar{position:absolute;width:26px;height:26px;color:#dfc89a}
-.band-art{width:130px;height:100px;flex:none}
+.band-art{width:92px;height:70px;flex:none;opacity:.95}
 .framing-row{display:flex;gap:26px;align-items:flex-start;flex-wrap:wrap}
 .framing-row .framing{flex:1;min-width:260px}
 .result-art{width:96px;height:96px;margin-bottom:6px}
 .band-btn .bicon{width:54px;height:44px;margin:0 auto 6px;display:block}
-.article-spot{width:88px;height:88px;margin-bottom:18px}
+.article-spot{width:60px;height:60px;margin-bottom:16px}
+.mini{width:44px;height:44px}
+.quiet-link{font-family:var(--sans);font-size:.92rem;font-weight:600;color:var(--sage);text-decoration:none}
+.quiet-link:hover{color:var(--forest);text-decoration:underline}
