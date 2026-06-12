@@ -91,6 +91,7 @@
   <!-- Screen: result -->
   <div id="screen-result" hidden>
     <div class="qcard fade">
+      <div id="result-art" aria-hidden="true"></div>
       <span class="result-badge" id="result-badge"></span>
       <h2 id="result-title" style="margin-top:0"></h2>
       <div id="result-body"></div>
@@ -142,6 +143,7 @@ var WS = (function(){
   var bands = [
     {
       id:"b1", label:"Birth to 2", sub:"infants and toddlers",
+      icon:'<svg class="bicon" viewBox="0 0 54 44" aria-hidden="true"><circle cx="20" cy="16" r="12" fill="#c9974f"/><path d="M20 4 a 12 12 0 0 1 0 24" fill="#b86a4b"/><rect x="28" y="24" width="20" height="6" rx="3" fill="#1e3328" transform="rotate(32 38 27)"/></svg>',
       questions:[
         "Does your child turn toward sound and respond when you say their name?",
         "Does your child make a variety of sounds, like babbling, cooing, or consonant sounds such as \"baba\" or \"dada\"?",
@@ -156,6 +158,7 @@ var WS = (function(){
     },
     {
       id:"b2", label:"Ages 2 to 5", sub:"the preschool years",
+      icon:'<svg class="bicon" viewBox="0 0 54 44" aria-hidden="true"><rect x="8" y="26" width="17" height="17" rx="3.5" fill="#4b6a52"/><rect x="12" y="9" width="14" height="14" rx="3.5" fill="#c9974f" transform="rotate(-5 19 16)"/><circle cx="40" cy="33" r="10" fill="#b86a4b"/></svg>',
       questions:[
         "By age 2, does your child use around 50 or more words that are recognizable?",
         "By age 3, does your child put two or three words together, like \"want cookie\" or \"big truck go\"?",
@@ -170,6 +173,7 @@ var WS = (function(){
     },
     {
       id:"b3", label:"Ages 5 to 8", sub:"early elementary",
+      icon:'<svg class="bicon" viewBox="0 0 54 44" aria-hidden="true"><path d="M6 12 C 14 7 22 7 27 11 C 32 7 40 7 48 12 L 48 36 C 40 32 32 32 27 36 C 22 32 14 32 6 36 Z" fill="#fbf7ee" stroke="#4b6a52" stroke-width="2" stroke-linejoin="round"/><path d="M27 11 L 27 36" stroke="#4b6a52" stroke-width="2"/></svg>',
       questions:[
         "Is your child easy to understand when they talk, even for someone meeting them for the first time?",
         "Can your child follow directions that have two or three parts, like at school?",
@@ -184,6 +188,7 @@ var WS = (function(){
     },
     {
       id:"b4", label:"Ages 8 to 12", sub:"upper elementary and middle",
+      icon:'<svg class="bicon" viewBox="0 0 54 44" aria-hidden="true"><rect x="14" y="12" width="26" height="30" rx="7" fill="#4b6a52"/><path d="M20 13 C 20 5 34 5 34 13" stroke="#1e3328" stroke-width="3.5" fill="none"/><rect x="19" y="25" width="16" height="12" rx="3.5" fill="#e7ecdf"/></svg>',
       questions:[
         "Does your child read at or near grade level, for both fluency and understanding?",
         "Can your child retell a story, summarize a movie, or explain what happened at school in a way that makes sense?",
@@ -268,7 +273,7 @@ function show(screen){
   WS.bands.forEach(function(b){
     var btn = document.createElement("button");
     btn.className = "choice-btn band-btn";
-    btn.innerHTML = '<span class="age">' + b.label + '</span><small>' + b.sub + '</small>';
+    btn.innerHTML = (b.icon || '') + '<span class="age">' + b.label + '</span><small>' + b.sub + '</small>';
     btn.addEventListener("click", function(){
       state.band = b; state.idx = 0; state.answers = [];
       renderQuestion(); show("screen-question");
@@ -314,9 +319,16 @@ $("restart-btn").addEventListener("click", function(){
   show("screen-intro");
 });
 
+var RESULT_ART = {
+  A:'<svg class="result-art" viewBox="0 0 96 96"><circle cx="64" cy="28" r="14" fill="#c9974f"/><g stroke="#c9974f" stroke-width="2.5" stroke-linecap="round"><line x1="64" y1="6" x2="64" y2="11"/><line x1="84" y1="28" x2="89" y2="28"/><line x1="79" y1="13" x2="82" y2="10"/><line x1="79" y1="43" x2="82" y2="46"/></g><path d="M30 84 C 30 66 30 56 30 46" stroke="#4b6a52" stroke-width="3.5" fill="none" stroke-linecap="round"/><path d="M30 62 C 18 59 11 50 11 39 C 23 42 30 51 30 62 Z" fill="#4b6a52"/><path d="M31 70 C 43 67 50 58 50 47 C 38 50 31 59 31 70 Z" fill="#6f8a74"/><ellipse cx="42" cy="86" rx="26" ry="4" fill="#e0d4bb"/></svg>',
+  B:'<svg class="result-art" viewBox="0 0 96 96"><circle cx="48" cy="48" r="34" fill="#fbf7ee" stroke="#c9974f" stroke-width="3"/><circle cx="48" cy="48" r="4" fill="#1e3328"/><path d="M48 48 L 66 28" stroke="#1e3328" stroke-width="3.5" stroke-linecap="round"/><path d="M48 48 L 38 60" stroke="#b86a4b" stroke-width="3" stroke-linecap="round"/><g fill="#4b6a52" font-family="sans-serif" font-size="8" text-anchor="middle"><text x="48" y="24">N</text></g></svg>',
+  C:'<svg class="result-art" viewBox="0 0 96 96"><path d="M12 28 a 14 14 0 0 1 14 -14 h 22 a 14 14 0 0 1 0 28 h -10 l -12 11 v -11 h 0 a 14 14 0 0 1 -14 -14 Z" fill="#4b6a52"/><g fill="#f4ede0"><circle cx="34" cy="28" r="2.6"/><circle cx="44" cy="28" r="2.6"/><circle cx="54" cy="28" r="2.6"/></g><path d="M84 56 a 14 14 0 0 0 -14 -14 h -18 a 14 14 0 0 0 0 28 h 8 l 11 10 v -10 h -1 a 14 14 0 0 0 14 -14 Z" fill="#c9974f"/><path d="M44 56 h 20" stroke="#fbf7ee" stroke-width="3" stroke-linecap="round"/></svg>'
+};
+
 function renderResult(){
   var r = WS.score(state.band.id, state.answers);
   var copy = RESULTS[r.tier];
+  $("result-art").innerHTML = RESULT_ART[r.tier] || "";
   var badge = $("result-badge");
   badge.textContent = copy.badge;
   badge.className = "result-badge " + copy.cls;
